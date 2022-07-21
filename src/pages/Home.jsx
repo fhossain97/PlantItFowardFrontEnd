@@ -8,3 +8,5 @@ const Home = ({ items, updateItemState, user }) => {
     </div>
   )
 }
+
+export default Home

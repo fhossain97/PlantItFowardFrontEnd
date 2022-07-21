@@ -80,3 +80,5 @@ const ItemEdit = ({ setItems }) => {
         </StyledForm>
   )
 }
+
+export default ItemEdit

@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Routes, Route } from 'react-router-dom'
-import Home from  './pages/Home'
-import NewItem from './pages/NewItem';
+import Home from './components/Home'
+import NewItem from './pages/NewItem'
 import Layout from './components/Layout';
-import ItemView from './pages/ItemView';
+import Item from './components/Item'
 import ItemEdit from './pages/ItemEdit';
 import Login from './pages/Login'
 
@@ -36,7 +35,7 @@ return (
       <Route path='/' element={ <Home items={items} updateItemState={updateItemState} user={ user} />} />
       <Route path='/new-item' element={ <NewItem addItem={addToItem}  />} />
       <Route path='/item/edit/:id/' element={ <ItemEdit  setItems={setItems} />} />
-      <Route path='/item/:id' element={ <ItemView items={items}/>} />
+      <Route path='/item/:id' element={ <Item items={items}/>} />
       <Route path='/login' element={ <Login setUser={setUser} />} />
   </Routes>
 </Layout>
