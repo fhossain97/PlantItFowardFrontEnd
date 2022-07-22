@@ -8,6 +8,7 @@ import Layout from './components/Layout/Layout';
 import ItemView from './pages/ItemView';
 import ItemEdit from './pages/ItemEdit';
 import Login from './pages/Login'
+import imageUpload from './components/MulterComponents/imageUpload';
 
 function App() {
   const [ items, setItems  ] = useState([])
@@ -30,6 +31,7 @@ const updateItemState = (id) => {
 
 return (
 <Layout user={user} setUser={setUser}> 
+<imageUpload />
 
   <Routes>
       <Route path='/' element={ <Home items={items} updateItemState={updateItemState} user={ user} />} />
