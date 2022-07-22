@@ -2,17 +2,10 @@ import './App.css';
 import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Routes, Route } from 'react-router-dom'
-<<<<<<< HEAD
-import Home from './components/Home'
-import NewItem from './pages/NewItem'
-import Layout from './components/Layout';
-import Item from './components/Item'
-=======
 import Home from  './pages/Home'
 import NewItem from './pages/NewItem';
 import Layout from './components/Layout/Layout';
 import ItemView from './pages/ItemView';
->>>>>>> fb34a269 (saved files)
 import ItemEdit from './pages/ItemEdit';
 import Login from './pages/Login'
 
