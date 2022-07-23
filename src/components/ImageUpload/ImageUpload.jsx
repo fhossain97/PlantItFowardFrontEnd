@@ -4,9 +4,8 @@ import React, { Component, useState } from "react";
 const ImageUpload = () => {
 
     const [image, setImage] = useState('')
-    const [ url, setUrl ] = useState('');
+    const [url, setUrl ] = useState('');
 
- 
     const upload = () => {
     const data = new FormData()
     data.append("file", image)
@@ -16,7 +15,7 @@ const ImageUpload = () => {
     method:"post",
     body: data
     })
-    .then(resp => resp.json())
+    .then(res => res.json())
     .then(data => {
     setUrl(data.url)
     })
@@ -28,15 +27,13 @@ const ImageUpload = () => {
     }
 
   return (
+
 <form>
-
-
     <label htmlFor='image'>Image</label>
     <input type="file" accept="image/png, image/jpeg" onChange= {handleChange} />
-    <img src={url}/>
     <button onClick={upload}>Upload</button>
-
 </form>
+
   );
 };
 
