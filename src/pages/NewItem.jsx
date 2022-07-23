@@ -78,5 +78,9 @@ const NewItem = ({ addItem }) => {
     </StyledForm>
   )
 }
+<<<<<<< HEAD:src/pages/NewItem.jsx
  
+=======
+
+>>>>>>> 7765e166 (edited index.js along with export default):src/pages/NewItem.js
 export default NewItem
