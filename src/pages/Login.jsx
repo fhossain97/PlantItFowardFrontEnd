@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
+
 const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
@@ -49,6 +50,7 @@ const Login = ({ setUser }) => {
         </div>
 
         <input type='submit' value='Log In' />
+        <imageUpload />
 
     </StyledForm>
   )

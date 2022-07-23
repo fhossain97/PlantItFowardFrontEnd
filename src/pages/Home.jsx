@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Items from '../components/Items'
+import Items from '../components/Item/Items'
 
 const Home = ({ items, updateItemState, user }) => {
   return (
@@ -8,3 +8,5 @@ const Home = ({ items, updateItemState, user }) => {
     </div>
   )
 }
+
+export default Home
