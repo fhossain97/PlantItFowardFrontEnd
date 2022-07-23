@@ -1,20 +1,36 @@
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 import styled from 'styled-components'
 
 
-const imageUpload = () => {
+
+const ImageUpload = () => {
+
+    const [upload, setUpload] = useState({
+        file: null
+    })
+
+    const handleChange = (e) => {
+        e.preventDefault()
+        setUpload(URL.createObjectURL(e.target.upload[0]))
+    }
+
+
+
+
+
+
+
   return (
-      <form>
-        <h3>Upload Image</h3>
-        <div className="file">
-          <input type="file" />
-        </div>
-        <button type="submit">
-            Upload
-          </button>
-          
-      </form>
+<form>
+
+<label htmlFor='image'>Image</label>
+<input type="file" accept="image/png, image/jpeg" onChange={handleChange}/>
+<img src={upload} />
+
+
+
+</form>
   );
 };
 
-export default imageUpload;
+export default ImageUpload;
