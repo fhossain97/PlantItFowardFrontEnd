@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import ImageUpload from '../components/MulterComponents/ImageUpload'
 
 
 const StyledForm = styled.form`
@@ -54,6 +55,7 @@ const NewItem = ({ addItem }) => {
                 <input id='quantity' name='quantity' type='text'     onChange={handleChange} />
             </div>
             <div>
+                <ImageUpload />
                 <label htmlFor='image'>Image</label>
                 <input id='image' name='image' type='text'   onChange={handleChange} />
             </div>
@@ -78,9 +80,4 @@ const NewItem = ({ addItem }) => {
     </StyledForm>
   )
 }
-<<<<<<< HEAD:src/pages/NewItem.jsx
- 
-=======
-
->>>>>>> 7765e166 (edited index.js along with export default):src/pages/NewItem.js
 export default NewItem
