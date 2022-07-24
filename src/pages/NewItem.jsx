@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
+import ImageUpload from '../components/ImageUpload/ImageUpload'
 
 
 const StyledForm = styled.form`
@@ -42,7 +43,7 @@ const NewItem = ({ addItem }) => {
     }
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit} enctype="multipart/form-data" >
         <h1> Create new Item</h1>
             <div>
                 <label htmlFor='name'>Name</label>
@@ -54,8 +55,11 @@ const NewItem = ({ addItem }) => {
                 <input id='quantity' name='quantity' type='text'     onChange={handleChange} />
             </div>
             <div>
+               {/* <ImageUpload /> */}
+               <div>
                 <label htmlFor='image'>Image</label>
-                <input id='image' name='image' type='text'   onChange={handleChange} />
+                <input id='image' name='image' type='file'   onChange={handleChange} />
+            </div>
             </div>
             {/* // <div>
                 // <label htmlFor='uniqueIdentifier'>SKU</label>
@@ -78,9 +82,4 @@ const NewItem = ({ addItem }) => {
     </StyledForm>
   )
 }
-<<<<<<< HEAD:src/pages/NewItem.jsx
- 
-=======
-
->>>>>>> 7765e166 (edited index.js along with export default):src/pages/NewItem.js
 export default NewItem
