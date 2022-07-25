@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const ItemView = () => {
-  return (
-    <div>ItemView</div>
-  )
-}
+  return <div>ItemView</div>;
+};
 
-export default ItemView
+export default ItemView;

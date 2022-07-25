@@ -1,14 +1,7 @@
-import React from 'react'
-import imageUpload from '../MulterComponents/imageUpload'
+import React from "react";
 
 const Home = () => {
-  return (
-    <div>Home
+  return <div>Home</div>;
+};
 
-
-        <imageUpload />
-    </div>
-  )
-}
-
-export default Home
+export default Home;

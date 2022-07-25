@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import ImageUpload from '../components/ImageUpload/ImageUpload'
+// import ImageUpload from '../components/ImageUpload/ImageUpload'
 
 
 const StyledForm = styled.form`
@@ -34,7 +34,7 @@ const NewItem = ({ addItem }) => {
     const handleSubmit = (e) => {
         e.preventDefault()
         console.log(formData)
-        axios.post('http://localhost:3000/item', formData )
+        axios.post('http://localhost:8000/item', formData )
         .then(res =>  {
             setFormData(initialState)
             addItem(res.data)
@@ -58,7 +58,7 @@ const NewItem = ({ addItem }) => {
                {/* <ImageUpload /> */}
                <div>
                 <label htmlFor='image'>Image</label>
-                <input id='image' name='image' type='file'   onChange={handleChange} />
+                <input id='Image' name='Image' type='file' accept="image/png, image/jpeg, image/jpg" onChange={handleChange} />
             </div>
             </div>
             {/* // <div>
