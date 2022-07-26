@@ -16,6 +16,7 @@ const NavbarContainer = styled.nav`
 `;
 
 const Navbar = ({ user, setUser }) => {
+
   const navigate = useNavigate();
 
   return (
@@ -40,6 +41,10 @@ const Navbar = ({ user, setUser }) => {
         <li>
           {" "}
           <Link to="/about"> About </Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/signup"> Sign Up</Link>
         </li>
         {user ? (
           <li>Welcome {user.name}</li>

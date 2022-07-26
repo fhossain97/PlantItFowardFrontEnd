@@ -9,10 +9,13 @@ import Layout from "./components/Layout/Layout";
 import ItemEdit from "./pages/ItemEdit";
 import Login from "./pages/Login";
 import Item from "./components/Item/Item";
+import userToken from "./utils/userToken";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [user, setUser] = useState();
+  const [user, setUser] = useState({
+    user: userToken.getUser()
+  });
 
   useEffect(() => {
     fetch("http://localhost:8000/item/")
@@ -45,6 +48,7 @@ function App() {
         />
         <Route path="/item/:id" element={<Item items={items} />} />
         <Route path="/login" element={<Login setUser={setUser} />} />
+        <Route path="/signup" />
       </Routes>
     </Layout>
   );
