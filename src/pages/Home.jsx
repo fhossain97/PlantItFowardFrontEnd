@@ -6,7 +6,14 @@ const Home = ({ items, updateItemState, user }) => {
     <div>
       <Items items={items} updateItemState={updateItemState} user={user} />
     </div>
+<<<<<<< HEAD
   );
 };
 
 export default Home;
+=======
+  )
+}
+
+export default Home
+>>>>>>> 7765e166 (edited index.js along with export default)
