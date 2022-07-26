@@ -90,12 +90,4 @@ const ItemEdit = ({ setItems }) => {
   );
 };
 
-<<<<<<< HEAD
 export default ItemEdit;
-=======
-        </StyledForm>
-  )
-}
-
-export default ItemEdit
->>>>>>> 7765e166 (edited index.js along with export default)
