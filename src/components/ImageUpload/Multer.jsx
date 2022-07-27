@@ -2,12 +2,10 @@ import React, { Component, useState } from "react";
 import axios from "axios";
 
 const Multer = () => {
-  const [upload, setUpload] = useState({
-    images: "",
-  });
+  const [upload, setUpload] = useState('');
 
   const handleChange = (e) => {
-    setUpload({ images: e.target.files[0] });
+    setUpload({images: e.target.files[0]});
   };
 
   const handleSubmit = (e) => {
@@ -19,14 +17,16 @@ const Multer = () => {
     });
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="image">Image</label>
+<div>  
+  <form onSubmit={handleSubmit}>
+      <label htmlFor="images">Image</label>
       <input
         type="file"
         accept="image/png, image/jpeg, image/jpg"
         onChange={handleChange}
       />
     </form>
+    </div> 
   );
 };
 

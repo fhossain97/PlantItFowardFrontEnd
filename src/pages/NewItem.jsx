@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-// import ImageUpload from '../components/ImageUpload/ImageUpload'
-
+import Cloudinary from '../components/ImageUpload/Cloudinary'
+import Multer from '../components/ImageUpload/Multer'
 
 const StyledForm = styled.form`
     display: flex;
@@ -20,7 +20,7 @@ const NewItem = ({ addItem }) => {
     const initialState = {
         name: '',
         quantity: '',
-        image: '',
+        images: '',
         description: '',
         genus: '',
         status: ''
@@ -54,13 +54,23 @@ const NewItem = ({ addItem }) => {
                 <label htmlFor='quantity'>Quantity</label>
                 <input id='quantity' name='quantity' type='text'     onChange={handleChange} />
             </div>
+
+
+
+
             <div>
-               {/* <ImageUpload /> */}
+               <Cloudinary />
+               
                <div>
-                <label htmlFor='image'>Image</label>
-                <input id='Image' name='Image' type='file' accept="image/png, image/jpeg, image/jpg" onChange={handleChange} />
+                {/* <Multer /> */}
             </div>
             </div>
+
+
+
+
+
+
             {/* // <div>
                 // <label htmlFor='uniqueIdentifier'>SKU</label>
                 // <input id='uniqueIdentifier' name='uniqueIdentifier' type='text'   onChange={handleChange}/>

@@ -60,8 +60,8 @@ const ItemEdit = ({ setItems }) => {
         />
       </div>
       <div>
-        <label htmlFor="image">Image</label>
-        <input id="image" name="image" type="text" onChange={handleChange} />
+        <label htmlFor="images">Image</label>
+        <input id="images" name="images" type="text" onChange={handleChange} />
       </div>
       {/* // <div>
                 // <label htmlFor='uniqueIdentifier'>SKU</label>
