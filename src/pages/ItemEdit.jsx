@@ -40,7 +40,7 @@ const ItemEdit = ({ setItems }) => {
     .then((res) => {
     setFormData(res.data);
     });
-  }, []);
+  }, [id]);
 
 
   return (

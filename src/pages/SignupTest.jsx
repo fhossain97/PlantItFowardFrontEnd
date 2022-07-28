@@ -1,11 +1,9 @@
+import axios from 'axios';
 import React, {useState} from 'react';
 import { useNavigate } from 'react-router-dom';
-import userToken from '../utils/userToken';
-
-//-space-y-px
 
 
-const SignupTest = ({handleSignupOrLogin}) => {
+const SignupTest = ({setUser, handleSignupOrLogin}) => {
 
     const navigate = useNavigate()
     const [formData, setFormData] = useState({
@@ -18,16 +16,16 @@ const SignupTest = ({handleSignupOrLogin}) => {
         setFormData({...formData, [e.target.id] : e.target.value})
     }
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
-        try{
-            await userToken.signup(formData);
+        axios.post('http://localhost:8000/user/signup', formData)
+        .then(res => {
+          console.log(res)
+          if(res.status === 200){
             handleSignupOrLogin()
             navigate('/')
-        } 
-        catch (err){
-            alert('Invalid Credentials')
-        }
+          }
+        })
     }
 
   return (
