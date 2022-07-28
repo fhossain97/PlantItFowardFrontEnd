@@ -8,13 +8,12 @@ const Home = ({ items, updateItemState, user }) => {
     <div>
       <Items items={items} updateItemState={updateItemState} user={user} />
     </div>
-  )}
+  )
+}
   else {
     return (
       <div >
         Plant It Forward <br/>
-         <button><Link to='/login'>Login</Link></button><br/>
-          <button><Link to='/signup'>Sign Up</Link></button>
       </div>
     )
   }

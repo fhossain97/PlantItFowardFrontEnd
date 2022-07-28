@@ -15,12 +15,9 @@ const NavbarContainer = styled.nav`
   }
 `;
 
-const Navbar = ({ user, setUser }) => {
-
-  const navigate = useNavigate();
-
-  return (
-    <NavbarContainer>
+const Navbar = ({ user, handleLogout }) => {
+  console.log(user)
+  let nav = user ? 
       <ul>
         <li>
           {" "}
@@ -42,27 +39,35 @@ const Navbar = ({ user, setUser }) => {
           {" "}
           <Link to="/about"> About </Link>
         </li>
-        {user ? (
-          <li>Welcome {user.name}</li>
-        ) : (
-          <li>
-            {" "}
-            <Link to="/login"> Login </Link>
-          </li>
-        )}
-        {user ? (
-          <button
-            onClick={() => {
-              setUser(null);
-              navigate("/");
-            }}
-          >
-            Log Out
-          </button>
-        ) : null}
-      </ul>
-    </NavbarContainer>
-  );
+        <li>
+          {" "}
+          Hello @{user.name}
+        </li>
+        <li>
+          <Link to='' onClick={handleLogout}>Log Out</Link>
+        </li>
+      </ul> 
+      :
+       <ul>
+         <li>
+          {" "}
+          <Link to="/"> Home </Link>
+        </li>
+        <li>
+          {" "}
+          <Link to="/login"> Login </Link>
+        </li><li>
+          {" "}
+          <Link to="/signup"> Signup </Link>
+        </li>
+       </ul>
+
+    return (
+      <NavbarContainer>
+        {nav}
+      </NavbarContainer>
+    )
+  
 };
 
 export default Navbar;

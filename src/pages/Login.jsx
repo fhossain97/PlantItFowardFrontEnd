@@ -1,40 +1,36 @@
-import axios from 'axios';
-import React, {useState} from 'react';
-import { useNavigate } from 'react-router-dom';
+import {useState} from 'react'
+import { useNavigate } from 'react-router-dom'
+import userToken from '../utils/userService'
 
 
-const SignupTest = ({setUser, handleSignupOrLogin}) => {
+const LoginTest = ({handleSignupOrLogin}) => {
 
     const navigate = useNavigate()
-    const [formData, setFormData] = useState({
-        name: '', 
-        password: '', 
-        passwordConf: ''
-    })
+    const [formData, setFormData] = useState()
 
     const handleChange = (e) => {
         setFormData({...formData, [e.target.id] : e.target.value})
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        axios.post('http://localhost:8000/user/signup', formData)
-        .then(res => {
-          console.log(res)
-          if(res.status === 200){
+        try{
+            await userToken.login(formData);
             handleSignupOrLogin()
             navigate('/')
-          }
-        })
+        } 
+        catch (err){
+            alert('Invalid Credentials')
+        }
     }
 
   return (
     <div onSubmit={handleSubmit} className="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-        <title>Sign Up</title>
+        <title>Sign Into Your Account</title>
     <div className="max-w-md w-full space-y-8">
       <form className="mt-8 space-y-6" action="#" method="POST">
         <input type="hidden" name="remember" defaultValue="true" />
-        <div className="rounded shadow-sm">
+        <div className="rounded-md shadow-sm -space-y-px">
           <div>
             <label htmlFor="name" className="sr-only">
             </label>
@@ -69,23 +65,6 @@ const SignupTest = ({setUser, handleSignupOrLogin}) => {
               onChange={handleChange}
             />
           </div>
-          <div>
-            <label htmlFor="passwordConf" className="sr-only">
-            </label>
-            <input
-              id="passwordConf"
-              name="passwordConf"
-              type="password"
-              required
-              className="appearance-none rounded-none relative block
-              w-full px-3 py-2 border border-gray-300
-              placeholder-gray-500 text-gray-900 rounded-b-md
-              focus:outline-none focus:ring-green-700
-              focus:border-green-700 focus:z-10 sm:text-sm"
-              placeholder="Confirm Password"
-              onChange={handleChange}
-            />
-          </div>
         </div>
         <div>
           <button
@@ -96,7 +75,7 @@ const SignupTest = ({setUser, handleSignupOrLogin}) => {
             focus:outline-none focus:ring-2 focus:ring-offset-2
             focus:ring-green-500"
           >
-            Sign Up
+            Sign in
           </button>
         </div>
       </form>
@@ -105,4 +84,4 @@ const SignupTest = ({setUser, handleSignupOrLogin}) => {
   )
 }
 
-export default SignupTest
+export default LoginTest

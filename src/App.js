@@ -5,14 +5,15 @@ import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
 import ItemEdit from "./pages/ItemEdit";
 import Item from "./components/Item/Item";
-import userToken from "./utils/userToken";
-import LoginTest from "./pages/LoginTest";
-import SignupTest from "./pages/SignupTest";
+import userService from "./utils/userService";
+import LoginTest from "./pages/Login";
+import SignupTest from "./pages/Signup";
 
 
 function App() {
+
   const [items, setItems] = useState([]);
-  const [user, setUser] = useState(userToken.getUser());
+  const [user, setUser] = useState({});
 
   useEffect(() => {
     fetch("http://localhost:8000/item/")
@@ -21,7 +22,12 @@ function App() {
   }, []);
 
   const handleSignupOrLogin = () => {
-      setUser(userToken.getUser())
+      setUser(userService.getUser())
+  }
+
+  const handleLogout = () => {
+      userService.logout();
+      setUser(null)
   }
 
   const addItem = (item) => {
@@ -34,7 +40,7 @@ function App() {
   };
 
   return (
-    <Layout user={user} setUser={setUser}>
+    <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
        <Route
           path="/"
