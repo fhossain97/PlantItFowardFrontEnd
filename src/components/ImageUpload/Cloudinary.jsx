@@ -9,12 +9,13 @@ const Cloudinary = () => {
     data.append("file", image);
     data.append("upload_preset", "plantitforward");
     data.append("cloud_name", "mushu");
-    fetch("https://api.cloudinary.com/v1_1/mushu/image/upload", {
+    fetch("https://api.cloudinary.com/v1_1/mushu/image/upload/", {
       method: "post",
       body: data,
     })
       .then((res) => res.json())
       .then((data) => {
+        console.log(data)
         setUrl(data.url);
       })
       .catch((err) => console.log(err));
@@ -25,15 +26,19 @@ const Cloudinary = () => {
   };
 
   return (
-    <form>
-      <label htmlFor="image">Image</label>
+    <div>
+      <label htmlFor="images">Image</label>
       <input
-        type="file"
-        accept="image/png, image/jpeg, image/jpg"
-        onChange={handleChange}
+      name="images"
+      type="file"
+      onChange={handleChange}
       />
       <button onClick={upload}>Upload</button>
-    </form>
+<div>
+<img src={url} />
+</div>
+    
+    </div>
   );
 };
 
