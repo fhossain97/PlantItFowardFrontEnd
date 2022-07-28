@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
 const NavbarContainer = styled.nav`
-  background-color: green;
+  background-color: darkgreen;
   padding: 5px;
 
   ul {
@@ -28,11 +28,11 @@ const Navbar = ({ user, setUser }) => {
         </li>
         <li>
           {" "}
-          <Link to="/new-item"> Add a plant to trade! </Link>
+          <Link to="/new-item"> Trade </Link>
         </li>
         <li>
           {" "}
-          <Link to="/items"> Orders </Link>
+          <Link to="/items"> Previous Orders </Link>
         </li>
         <li>
           {" "}
@@ -42,23 +42,19 @@ const Navbar = ({ user, setUser }) => {
           {" "}
           <Link to="/about"> About </Link>
         </li>
-        <li>
-          {" "}
-          <Link to="/signup"> Sign Up</Link>
-        </li>
-        {user ? (
+        {/* {user ? (
           <li>Welcome {user.name}</li>
         ) : (
           <li>
             {" "}
             <Link to="/login"> Login </Link>
           </li>
-        )}
+        )} */}
         {user ? (
           <button
             onClick={() => {
               setUser(null);
-              navigate("/login");
+              navigate("/");
             }}
           >
             Log Out
