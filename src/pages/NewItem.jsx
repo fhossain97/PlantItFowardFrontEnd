@@ -2,8 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
-import Cloudinary from '../components/ImageUpload/Cloudinary'
-import Multer from '../components/ImageUpload/Multer'
+
 
 const StyledForm = styled.form`
     display: flex;
@@ -33,8 +32,12 @@ const NewItem = ({ addItem }) => {
     }
     const handleSubmit = (e) => {
         e.preventDefault()
+        const images = new FormData();
+        images.append("images", formData.images);
+        images.append("name", formData.name);
+        // images.append("file", formData.images);
         console.log(formData)
-        axios.post('http://localhost:8000/item', formData )
+        axios.post('http://localhost:8000/item', images)
         .then(res =>  {
             setFormData(initialState)
             addItem(res.data)
@@ -42,8 +45,14 @@ const NewItem = ({ addItem }) => {
         })
     }
 
+
+    const handleFile = (e) => {
+        console.log(e.target)
+        setFormData({...formData, [e.target.id] : e.target.files[0]})
+    }
+
   return (
-    <StyledForm onSubmit={handleSubmit} enctype="multipart/form-data" >
+    <StyledForm onSubmit={handleSubmit} encType="multipart/form-data" >
         <h1> Create new Item</h1>
             <div>
                 <label htmlFor='name'>Name</label>
@@ -52,17 +61,21 @@ const NewItem = ({ addItem }) => {
             
             <div>
                 <label htmlFor='quantity'>Quantity</label>
-                <input id='quantity' name='quantity' type='text'     onChange={handleChange} />
+                <input id='quantity' name='quantity' type='text' onChange={handleChange} />
             </div>
-
-            <div>
-               <Cloudinary />
                
                <div>
-                {/* <Multer /> */}
-            </div>
-            </div>
 
+               <label htmlFor="images">Image</label>
+      <input
+      name="images"
+      id="images"
+        type="file"
+        accept="image/png, image/jpeg, image/jpg"
+       
+        onChange={handleFile}
+      />
+            </div>
 
 
 

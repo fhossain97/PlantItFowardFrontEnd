@@ -1,12 +1,12 @@
 import React, { Component, useState } from "react";
 
 const Cloudinary = () => {
-  const [image, setImage] = useState("");
+  const [images, setImage] = useState("");
   const [url, setUrl] = useState("");
 
   const upload = () => {
     const data = new FormData();
-    data.append("file", image);
+    data.append("file", images);
     data.append("upload_preset", "plantitforward");
     data.append("cloud_name", "mushu");
     fetch("https://api.cloudinary.com/v1_1/mushu/image/upload/", {
@@ -34,9 +34,9 @@ const Cloudinary = () => {
       onChange={handleChange}
       />
       <button onClick={upload}>Upload</button>
-<div>
-<img src={url} />
-</div>
+{/* <div>
+//<img src={url} />
+</div> */}
     
     </div>
   );
