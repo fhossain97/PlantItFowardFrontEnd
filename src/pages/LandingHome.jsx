@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import React from 'react'
+// import styled from 'styled-components'
 import Items from '../components/Item/Items'
 import {Link} from 'react-router-dom'
 

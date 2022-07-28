@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link, useNavigate } from "react-router-dom";
 
 const NavbarContainer = styled.nav`
-  background-color: darkgreen;
+  background-color: #fba69d;
   padding: 5px;
 
   ul {

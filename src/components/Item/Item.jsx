@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 const ItemContainer = styled.div`
-  background-color: dodgerblue;
+  background-color: #ffffe6;
   border-radius: 10px;
   width: 30vw;
   min-width: 200px;
@@ -34,17 +34,12 @@ const Item = ({ item, deleteItem, user }) => {
         {/* <p> ${ item.cost } <span style={ item.inStock ? { color: 'green' } : { color: 'red'}}>{ item.inStock ? 'In Stock' : 'Currently Unavailable'}</span></p> */}
       </div>
       <img src={item.images} alt={item.name} />
-      {user?.isAdmin ? (
+      {/* {user?.isAdmin ? ( */}
         <>
-          <Button color="blue" onClick={() => deleteItem(item._id)}>
-            Delete
-          </Button>
-          <Button color="red" onClick={() => deleteItem(item._id)}>
-            Delete
-          </Button>
+  
           <Button onClick={() => deleteItem(item._id)}>Delete</Button>
         </>
-      ) : null}
+      {/* ) : null} */}
 
       <Link to={`/item/${item._id}`}>Details</Link>
     </ItemContainer>
