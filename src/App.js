@@ -4,7 +4,6 @@ import LandingHome from "./pages/LandingHome";
 import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
 import ItemEdit from "./pages/ItemEdit";
-// import Login from "./pages/Login";
 import Item from "./components/Item/Item";
 import userToken from "./utils/userToken";
 import LoginTest from "./pages/LoginTest";
@@ -13,9 +12,7 @@ import SignupTest from "./pages/SignupTest";
 
 function App() {
   const [items, setItems] = useState([]);
-  const [user, setUser] = useState({
-    user: userToken.getUser()
-  });
+  const [user, setUser] = useState(userToken.getUser());
 
   useEffect(() => {
     fetch("http://localhost:8000/item/")
@@ -24,12 +21,14 @@ function App() {
   }, []);
 
   const handleSignupOrLogin = () => {
-      setUser({user: userToken.getUser()})
+      setUser(userToken.getUser())
   }
 
-  const addToItem = (item) => {
+  const addItem = (item) => {
     setItems([...items, item]);
   };
+  
+
   const updateItemState = (id) => {
     setItems(items.filter((item) => item._id !== id));
   };
@@ -43,7 +42,7 @@ function App() {
             <LandingHome items={items} updateItemState={updateItemState} user={user} />
           }
         />
-        <Route path="/new-item" element={<NewItem addItem={addToItem} />} />
+        <Route path="/new-item" element={<NewItem addItem={addItem} />} />
         <Route
           path="/item/edit/:id/"
           element={<ItemEdit setItems={setItems} />}
