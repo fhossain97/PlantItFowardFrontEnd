@@ -2,8 +2,9 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import Item from "./Item";
+
 const ItemBox = styled.div`
-  background-color: green;
+  background-color: #e6c300;
   min-width: 100vw;
   display: flex;
   flex-wrap: wrap;

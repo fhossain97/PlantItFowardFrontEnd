@@ -55,9 +55,6 @@ const NewItem = ({ addItem }) => {
                 <input id='quantity' name='quantity' type='text'     onChange={handleChange} />
             </div>
 
-
-
-
             <div>
                <Cloudinary />
                
@@ -92,4 +89,5 @@ const NewItem = ({ addItem }) => {
     </StyledForm>
   )
 }
+
 export default NewItem

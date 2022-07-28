@@ -49,7 +49,7 @@ const Navbar = ({ user, setUser }) => {
             {" "}
             <Link to="/login"> Login </Link>
           </li>
-        )} */}
+        )}
         {user ? (
           <button
             onClick={() => {
