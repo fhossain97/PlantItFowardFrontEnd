@@ -1,23 +1,17 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
-
-const StyledForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    min-width: 250px;
-    max-width: 50vw;
-    align-items: baseline;
-    div input {
-        margin-right: 25px;
-    }
-`
-
 const Login = ({ setUser }) => {
+
+    const loginState = {
+        email: '', 
+        pw: ''
+    };
+
+
     const navigate = useNavigate()
-    const [formData, setFormData] = React.useState()
+    const [formData, setFormData] = useState(loginState)
     const handleChange = (e) => {
         setFormData({...formData, [e.target.id] : e.target.value})
     }
@@ -36,23 +30,19 @@ const Login = ({ setUser }) => {
 
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <form className='container' onSubmit={handleSubmit}>
         <h1>Login</h1>
-
         <div>
             <label htmlFor='name'>Username</label>
             <input type='text' name='name' id='name' onChange={handleChange}  />
         </div>
-
         <div>
             <label htmlFor='password'>Password</label>
             <input type='password' name='password' id='password' onChange={handleChange}  />
         </div>
-
-        <input type='submit' value='Log In' />
+        <button type='submit'>Sign In</button>
         <imageUpload />
-
-    </StyledForm>
+    </form>
   )
 }
 

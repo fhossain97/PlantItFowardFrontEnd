@@ -1,15 +1,15 @@
-import "./App.css";
 import { useState, useEffect } from "react";
-//import styled from 'styled-components'
 import { Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
+import LandingHome from "./pages/LandingHome";
 import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
-//import ItemView from './pages/ItemView'
 import ItemEdit from "./pages/ItemEdit";
-import Login from "./pages/Login";
+// import Login from "./pages/Login";
 import Item from "./components/Item/Item";
 import userToken from "./utils/userToken";
+import LoginTest from "./pages/LoginTest";
+import SignupTest from "./pages/SignupTest";
+
 
 function App() {
   const [items, setItems] = useState([]);
@@ -23,7 +23,9 @@ function App() {
       .then((items) => setItems(items));
   }, []);
 
-  console.log(items);
+  const handleSignupOrLogin = () => {
+      setUser({user: userToken.getUser()})
+  }
 
   const addToItem = (item) => {
     setItems([...items, item]);
@@ -35,10 +37,10 @@ function App() {
   return (
     <Layout user={user} setUser={setUser}>
       <Routes>
-        <Route
+       <Route
           path="/"
           element={
-            <Home items={items} updateItemState={updateItemState} user={user} />
+            <LandingHome items={items} updateItemState={updateItemState} user={user} />
           }
         />
         <Route path="/new-item" element={<NewItem addItem={addToItem} />} />
@@ -47,8 +49,8 @@ function App() {
           element={<ItemEdit setItems={setItems} />}
         />
         <Route path="/item/:id" element={<Item items={items} />} />
-        <Route path="/login" element={<Login setUser={setUser} />} />
-        <Route path="/signup" />
+        <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
+        <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
       </Routes>
     </Layout>
   );
