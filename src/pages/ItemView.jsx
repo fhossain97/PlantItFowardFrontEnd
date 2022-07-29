@@ -7,10 +7,6 @@ const ItemView = ({items}) => {
 
     const [item, setItem] = useState()
     
-    //two ways to do it, 1 with props, 2 with a fresh request
-    //first way
-    // let coffee = coffees.find(c => c._id === id)
-
     useEffect(() => {
         fetch(`http://localhost:8000/item/${id}`)
         .then(res => res.json())
@@ -27,8 +23,6 @@ const ItemView = ({items}) => {
         <img src={item.images} alt={item.description} />
         <p>{item.description}</p>
 
-        {/* <p>Roast: <span>{item.roast}</span></p>
-        {item.inStock ? "In Stock!" : "Currently Unavailable"} */}
         <Link to={`/item/edit/${item._id}`} > Edit Item </Link>
         </>)
         }
