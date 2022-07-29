@@ -5,7 +5,6 @@ import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
 import ItemEdit from "./pages/ItemEdit";
 import ItemView from "./pages/ItemView";
-import Item from "./components/Item/Item";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
