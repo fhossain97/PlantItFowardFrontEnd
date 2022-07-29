@@ -27,13 +27,16 @@ const Button = styled.button`
 `;
 
 const Item = ({ item, deleteItem, user }) => {
+
+  console.log(item)
   return (
     <ItemContainer key={item._id}>
       <div>
         <h1> {item.name}</h1>
+      
         {/* <p> ${ item.cost } <span style={ item.inStock ? { color: 'green' } : { color: 'red'}}>{ item.inStock ? 'In Stock' : 'Currently Unavailable'}</span></p> */}
       </div>
-      <img src={item.images} alt={item.name} />
+      <img src={item.images} alt='' />
       {/* {user?.isAdmin ? ( */}
         <>
   
