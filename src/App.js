@@ -4,7 +4,7 @@ import LandingHome from "./pages/LandingHome";
 import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
 import ItemEdit from "./pages/ItemEdit";
-import Item from "./components/Item/Item";
+import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
@@ -17,8 +17,8 @@ function App() {
 
   useEffect(() => {
     fetch("http://localhost:8000/item/")
-      .then((res) => res.json())
-      .then((items) => setItems(items));
+      .then(res => res.json())
+      .then(items => setItems(items));
   }, []);
 
   const handleSignupOrLogin = () => {
@@ -53,7 +53,7 @@ function App() {
           path="/item/edit/:id/"
           element={<ItemEdit setItems={setItems} />}
         />
-        <Route path="/item/:id" element={<Item items={items} />} />
+        <Route path="/item/:id" element={<ItemView items={items} />} />
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
         <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
       </Routes>
