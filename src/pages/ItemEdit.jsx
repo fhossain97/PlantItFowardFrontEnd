@@ -9,22 +9,25 @@ const StyledForm = styled.form`
 `;
 
 const ItemEdit = ({ setItems }) => {
+
   let { id } = useParams();
   let navigate = useNavigate();
 
   const initialState = {
     name: "",
     quantity: "",
-    image: "",
+    images: "",
     description: "",
     genus: "",
     status: "",
   };
   const [formData, setFormData] = useState(initialState);
+
   const handleChange = (e) => {
     console.log(e.target);
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
@@ -47,7 +50,12 @@ const ItemEdit = ({ setItems }) => {
     <StyledForm onSubmit={handleSubmit}>
       <div>
         <label htmlFor="name">Name</label>
-        <input id="name" name="name" type="text" onChange={handleChange} />
+        <input 
+          id="name" 
+          name="name" 
+          type="text" 
+          value={formData.name}
+          onChange={handleChange} />
       </div>
 
       <div>
@@ -56,36 +64,52 @@ const ItemEdit = ({ setItems }) => {
           id="quantity"
           name="quantity"
           type="text"
+          value={formData.quantity}
           onChange={handleChange}
         />
       </div>
+
       <div>
         <label htmlFor="images">Image</label>
-        <input id="images" name="images" type="text" onChange={handleChange} />
+        <input 
+          id="images" 
+          name="images" 
+          type="text" 
+          onChange={handleChange} />
       </div>
-      {/* // <div>
-                // <label htmlFor='uniqueIdentifier'>SKU</label>
-                // <input id='uniqueIdentifier' name='uniqueIdentifier' type='text'   onChange={handleChange}/>
-            // </div> */}
+
       <div>
         <label htmlFor="description">Description</label>
         <input
           id="description"
           name="description"
           type="text"
-          onChange={handleChange}
-        />
+          value={formData.description}
+          onChange={handleChange} />
       </div>
+
       <div>
         <label htmlFor="genus">Genus</label>
-        <input id="genus" name="genus" type="text" onChange={handleChange} />
+        <input 
+          id="genus" 
+          name="genus" 
+          type="text" 
+          value={formData.genus}
+          onChange={handleChange} />
       </div>
+
       <div>
         <label htmlFor="status">Status</label>
-        <input id="status" name="status" type="text" onChange={handleChange} />
+        <input 
+          id="status" 
+          name="status" 
+          type="text" 
+          value={formData.status}
+          onChange={handleChange} />
       </div>
 
       <input type="submit" value="Edit Item" />
+
     </StyledForm>
   );
 };
