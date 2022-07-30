@@ -8,13 +8,14 @@ import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
-import { getCurrentLatLng } from '../src/components/Maps/Services/geolocation.jsx';
+import About from "./pages/About";
 
 
 function App() {
-ß
+
   const [items, setItems] = useState([]);
   const [user, setUser] = useState({});
+
 
   useEffect(() => {
     fetch("http://localhost:8000/item/")
@@ -40,6 +41,8 @@ function App() {
     setItems(items.filter((item) => item._id !== id));
   };
 
+  
+
   return (
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
@@ -57,6 +60,7 @@ function App() {
         <Route path="/item/:id" element={<ItemView items={items} />} />
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
         <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
+      <Route path="/about" element={<About />} />
       </Routes>
     </Layout>
   );
