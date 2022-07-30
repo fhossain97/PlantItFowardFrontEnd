@@ -77,10 +77,6 @@ const NewItem = ({ addItem }) => {
       />
             </div>
 
-
-
-
-
             {/* // <div>
                 // <label htmlFor='uniqueIdentifier'>SKU</label>
                 // <input id='uniqueIdentifier' name='uniqueIdentifier' type='text'   onChange={handleChange}/>
