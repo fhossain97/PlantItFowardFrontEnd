@@ -43,7 +43,7 @@ function App() {
   return (
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
-      <SearchBar placeholder="Search for Plants..." data={items}/>
+      {/* <SearchBar placeholder="Search for Plants..." data={items}/> */}
       <Routes>
        <Route
           path="/"

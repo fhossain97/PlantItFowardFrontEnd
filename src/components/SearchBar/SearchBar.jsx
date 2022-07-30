@@ -4,8 +4,12 @@ import CloseIcon from '@mui/icons-material/Close';
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 
+// https://www.youtube.com/watch?v=x7niho285qs&t=1900s
 
 const SearchBarContainer = styled.nav`
+
+    /* background-color:black; */
+
   .searchInputs {
     display: flex;
     /* justify-content: center; */

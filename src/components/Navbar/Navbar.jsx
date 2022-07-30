@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-// import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import { Link, useNavigate } from "react-router-dom";
 
 const NavbarContainer = styled.nav`
@@ -18,20 +18,20 @@ const NavbarContainer = styled.nav`
 
 const Navbar = ({ user, handleLogout }) => {
   
-  // const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/item/")
-  //     .then(res => res.json())
-  //     .then(items => setItems(items));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:8000/item/")
+      .then(res => res.json())
+      .then(items => setItems(items));
+  }, []);
 
   console.log(user)
   let nav = user ? 
       <ul>
-        {/* <li>
+        <li>
           <SearchBar placeholder="Search for Plants..." data={items}/>
-        </li> */}
+        </li>
         <li>
           {" "}
           <Link to="/"> Home </Link>
