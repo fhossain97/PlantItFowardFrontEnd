@@ -8,10 +8,11 @@ import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
+import { getCurrentLatLng } from '../src/components/Maps/Services/geolocation.jsx';
 
 
 function App() {
-
+ß
   const [items, setItems] = useState([]);
   const [user, setUser] = useState({});
 
