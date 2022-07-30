@@ -8,7 +8,7 @@ import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
-
+import bootstrap from "bootstrap";
 
 function App() {
 

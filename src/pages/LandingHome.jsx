@@ -1,9 +1,9 @@
 import Items from '../components/Item/Items'
 import {Link} from 'react-router-dom'
+import Logo4 from '../assets/images/Logo4.png'
 
 const Home = ({ items, updateItemState, user }) => {
-  const isLoggedIn = user
-  if(isLoggedIn){
+ if(user){
   return (
     <div>
       <Items items={items} updateItemState={updateItemState} user={user} />
@@ -13,7 +13,7 @@ const Home = ({ items, updateItemState, user }) => {
   else {
     return (
       <div >
-        Plant It Forward <br/>
+        <img src={Logo4}  alt=''/>
       </div>
     )
   }
