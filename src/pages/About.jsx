@@ -3,7 +3,6 @@ import Map from "../components/Map/Maps";
 import { getCurrentLatLng } from "../components/Map/geolocation";
 
 
-
 function About() {
   const [coords, setCoords] = useState({
     lat: null,
