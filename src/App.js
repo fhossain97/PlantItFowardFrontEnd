@@ -8,6 +8,7 @@ import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 
 function App() {
@@ -40,7 +41,9 @@ function App() {
   };
 
   return (
+    
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
+      <SearchBar placeholder="Search for Plants..." data={items}/>
       <Routes>
        <Route
           path="/"
