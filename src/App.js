@@ -43,7 +43,11 @@ function App() {
   return (
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
+<<<<<<< HEAD
       {/* <SearchBar placeholder="Search for Plants..." data={items}/> */}
+=======
+      <SearchBar placeholder="Search for Plants..." data={items}/>
+>>>>>>> 8972cb12 (search bar is working)
       <Routes>
        <Route
           path="/"
