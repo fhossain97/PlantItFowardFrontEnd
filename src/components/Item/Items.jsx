@@ -14,7 +14,7 @@ const ItemBox = styled.div`
 const Items = ({ items, updateItemState, user }) => {
   const deleteItem = (id) => {
     axios.delete(`http://localhost:8000/item/${id}`).then((res) => {
-      console.log(res);
+      //console.log(res);
       updateItemState(id);
     });
   };

@@ -13,7 +13,7 @@ const ItemView = ({items}) => {
         .then(data => setItem(data))
     },[])
 
-    console.log(item)
+    //console.log(item)
 
   return (
     <div>

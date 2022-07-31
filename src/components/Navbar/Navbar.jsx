@@ -16,7 +16,7 @@ const NavbarContainer = styled.nav`
 `;
 
 const Navbar = ({ user, handleLogout }) => {
-  console.log(user)
+  //console.log(user)
   let nav = user ? 
       <ul>
         <li>

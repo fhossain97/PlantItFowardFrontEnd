@@ -27,7 +27,7 @@ const NewItem = ({ addItem }) => {
     const navigate = useNavigate()
     const [formData, setFormData] = useState(initialState)
     const handleChange = (e) => {
-        console.log(e.target)
+        //console.log(e.target)
         setFormData({...formData, [e.target.id] : e.target.value})
     }
     const handleSubmit = (e) => {
@@ -36,7 +36,7 @@ const NewItem = ({ addItem }) => {
         images.append("images", formData.images);
         images.append("name", formData.name);
         // images.append("file", formData.images);
-        console.log(formData)
+        //console.log(formData)
         axios.post('http://localhost:8000/item', images)
         .then(res =>  {
             setFormData(initialState)
@@ -47,7 +47,7 @@ const NewItem = ({ addItem }) => {
 
 
     const handleFile = (e) => {
-        console.log(e.target)
+        //console.log(e.target)
         setFormData({...formData, [e.target.id] : e.target.files[0]})
     }
 

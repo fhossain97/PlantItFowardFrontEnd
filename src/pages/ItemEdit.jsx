@@ -24,7 +24,7 @@ const ItemEdit = ({ setItems }) => {
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
-    console.log(e.target);
+    //console.log(e.target);
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
@@ -33,9 +33,9 @@ const ItemEdit = ({ setItems }) => {
     const images = new FormData();
     images.append("images", formData.images);
     images.append("name", formData.name);
-    console.log(formData)
+    //console.log(formData)
     e.preventDefault();
-    console.log(formData);
+    //console.log(formData);
     axios.put(`http://localhost:8000/item/${id}`, images).then((res) => {
       setFormData(initialState);
       setItems(res.data);
@@ -51,7 +51,7 @@ const ItemEdit = ({ setItems }) => {
   }, [id]);
 
   const handleFile = (e) => {
-    console.log(e.target)
+    //console.log(e.target)
     setFormData({...formData, [e.target.id] : e.target.files[0]})
 }
 

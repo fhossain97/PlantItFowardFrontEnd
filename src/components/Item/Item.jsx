@@ -28,7 +28,7 @@ const Button = styled.button`
 
 const Item = ({ item, deleteItem, user }) => {
 
-  console.log(item)
+  //console.log(item)
   return (
     <ItemContainer key={item._id}>
       <div>

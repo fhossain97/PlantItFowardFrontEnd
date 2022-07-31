@@ -1,29 +1,31 @@
-import React, { useState, useEffect } from "react";
-import Map from "../components/Map/Maps";
-import { getCurrentLatLng } from "../components/Map/geolocation";
+import React, {useState, useEffect} from "react";
+import Maps from "../components/Map/Maps";
+import {getCurrentLatLng} from "../components/Map/geolocation"
+
 
 
 function About() {
-  const [coords, setCoords] = useState({
-    lat: null,
-    lng: null
-  });
+    const [coords, setCoords]= useState({})
+    useEffect(() => {
+        retrieveCoords();
+      }, []);
+    //const coordinates = await getCurrentLatLng()
+//const {lat, lng} = await getCurrentLatLng()
+//console.log(setCoords)
+//setCoords({lat, lng})
 
-
-  useEffect(() => {
-    getCoords();
-  }, []);
-
-
-  const getCoords = async () => {
+const retrieveCoords = async () => {
     let { lat, lng } = await getCurrentLatLng();
     setCoords({ lat, lng });
   };
 
+console.log(coords)
+
   return (
+
     <div>
-      <Map lat={coords.lat} lng={coords.lng} />
-hell
+      <Maps lng={coords.lng} lat={coords.lat}/>
+
 
     </div>
   );

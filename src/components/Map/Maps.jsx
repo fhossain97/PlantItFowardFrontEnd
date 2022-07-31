@@ -1,29 +1,39 @@
-import React, { useEffect } from "react";
-import mapStyle from "../Map/map-style";
-import styles from "./Map.module.css";
+import React from "react";
+import { GoogleMap, Marker, MarkerClusterer } from "@react-google-maps/api";
+import { useState, useEffect } from "react";
 
-function Map(props) {
+const containerStyle = {
+  width: "100vw",
+  height: "100vh",
+};
 
-  let mapDiv = React.createRef();
-
-  useEffect(() => {
-    setMap();
+function Maps({ lat, lng }) {
+  const [centers, setCenters] = useState({
+    lat: 40.7148919,
+    lng: -73.7676799,
   });
 
-  const setMap = () => {
-    if (props.lat && props.lng) {
-      const location = { lat: props.lat, lng: props.lng };
-      const map = new window.google.maps.Map(mapDiv.current, {
-        zoom: props.zoom || 12,
-        center: location,
-        disableDefaultUI: true,
-        styles: mapStyle,
-      });
-      new window.google.maps.Marker({ position: location, map: map });
-    }
-  };
+  useEffect(() => {
+    setCenters({
+      lat: lat,
+      lng: lng,
+    });
+  }, []);
 
-  return <div ref={mapDiv} className={styles.Map}></div>;
+  //console.log(centers)
+  console.log(lat, lng);
+  return (
+    // googleMapsApiKey="AIzaSyDfcFt2zs-5ODLk-Vb8tvgVEkfVFol8_HU">
+    <GoogleMap mapContainerStyle={containerStyle} center={centers} zoom={10}>
+      <Marker position={centers}
+     animations={"BOUNCE"}
+      ></Marker>
+
+      <></>
+    </GoogleMap>
+  );
 }
+export default Maps;
 
-export default Map;
+//link for assitance -https://react-google-maps-api-docs.netlify.app/
+//Es linter
