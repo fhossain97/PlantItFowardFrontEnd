@@ -9,8 +9,8 @@ const containerStyle = {
 
 function Maps({ lat, lng }) {
   const [centers, setCenters] = useState({
-    lat: 40.7148919,
-    lng: -73.7676799,
+    lat:'40.786718450836766',
+    lng:'-73.72577226019823',
   });
 
   useEffect(() => {
@@ -20,20 +20,28 @@ function Maps({ lat, lng }) {
     });
   }, []);
 
+
   //console.log(centers)
   console.log(lat, lng);
   return (
     // googleMapsApiKey="AIzaSyDfcFt2zs-5ODLk-Vb8tvgVEkfVFol8_HU">
+   
+
     <GoogleMap mapContainerStyle={containerStyle} center={centers} zoom={10}>
       <Marker position={centers}
-     animations={"BOUNCE"}
+      animation={'bounce'}
+      draggable={true}
       ></Marker>
+{/* <MarkerClusterer minimumClusterSize={5} gridSize={60}
+>
 
-      <></>
+
+</MarkerClusterer> */}
+  
     </GoogleMap>
+
   );
 }
 export default Maps;
 
 //link for assitance -https://react-google-maps-api-docs.netlify.app/
-//Es linter

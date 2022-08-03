@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import LandingHome from "./pages/LandingHome";
+import LandingHome from "./pages/LandingHome.jsx";
 import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
 import ItemEdit from "./pages/ItemEdit";
@@ -10,6 +10,7 @@ import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
 import bootstrap from "bootstrap";
 import About from "./pages/About";
+import Chat from "./pages/Chat"
 
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
         <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
       <Route path="/about" element={<About />} />
+      <Route path="/chat" element={<Chat />} />
       </Routes>
     </Layout>
   );

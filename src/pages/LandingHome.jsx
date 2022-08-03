@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom'
 import Logo4 from '../assets/images/Logo4.png'
 
 const Home = ({ items, updateItemState, user }) => {
+
  if(user){
   return (
     <div>
@@ -17,6 +18,8 @@ const Home = ({ items, updateItemState, user }) => {
       </div>
     )
   }
+
+  
 
 };
 

@@ -24,6 +24,7 @@ console.log(coords)
   return (
 
     <div>
+        <p>Plant it Forward is a non-profit trading website meant for all plant enthusiasts!</p>
       <Maps lng={coords.lng} lat={coords.lat}/>
 
 
