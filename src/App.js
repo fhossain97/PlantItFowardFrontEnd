@@ -9,12 +9,16 @@ import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
 import SearchBar from "./components/SearchBar/SearchBar";
+import bootstrap from "bootstrap";
+import About from "./pages/About";
+import "./index.css";
 
 
 function App() {
 
   const [items, setItems] = useState([]);
   const [user, setUser] = useState({});
+
 
   useEffect(() => {
     fetch("http://localhost:8000/item/")
@@ -40,6 +44,8 @@ function App() {
     setItems(items.filter((item) => item._id !== id));
   };
 
+  
+
   return (
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
@@ -59,6 +65,8 @@ function App() {
         <Route path="/item/:id" element={<ItemView updateItemState={updateItemState} items={items} />} />
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
         <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
+        <Route path="/about" element={<About />} />
+      
       </Routes>
     </Layout>
   );

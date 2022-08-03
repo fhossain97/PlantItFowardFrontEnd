@@ -22,7 +22,7 @@ const Items = ({ items, updateItemState, user }) => {
   return (
     <ItemBox>
       {items.length === 0
-        ? "Sorry! This plant is no longer available."
+        ? "Sorry! No plants available to trade at this time."
         : items.map((item) => {
             return (
               <Item
