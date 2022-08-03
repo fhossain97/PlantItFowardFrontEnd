@@ -8,7 +8,6 @@ import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
-import SearchBar from "./components/SearchBar/SearchBar";
 import bootstrap from "bootstrap";
 import About from "./pages/About";
 import "./index.css";
