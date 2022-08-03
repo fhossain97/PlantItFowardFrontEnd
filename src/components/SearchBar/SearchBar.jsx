@@ -108,14 +108,13 @@ function SearchBar({placeholder, data}) {
     const clearInput = () => {
         setFilteredData([])
         setWordEntered("")
+        
     }
 
     // https://bobbyhadz.com/blog/react-add-remove-class-on-click
 
     const handleClick = (e) =>{
       e.currentTarget.classList.toggle('dropdownToggle')
-      window.location.reload(true)
-
     }
   return (
     
@@ -139,12 +138,14 @@ function SearchBar({placeholder, data}) {
           
           <div className="dataResult">
              {filteredData.map((item) =>{
-                 return (<Link key={item._id} onClick={clearInput} to={`/item/${item._id}`  } > 
+                 return (
+                 <Link key={item._id} onClick={clearInput} to={`/item/${item._id}`  } > 
                  <p className="link">
                    {item.name}
                  </p> 
-                 </Link>)
-              })}
+                 </Link>
+                 )
+                })}
          </div>
          )}
         </Dropdown.Menu>

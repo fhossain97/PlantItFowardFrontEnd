@@ -11,7 +11,7 @@ const ItemView = () => {
         fetch(`http://localhost:8000/item/${id}`)
         .then(res => res.json())
         .then(data => setItem(data))
-    },[])
+    })
 
     console.log(item)
 
