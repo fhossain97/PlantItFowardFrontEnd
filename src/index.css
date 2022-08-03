@@ -15,7 +15,7 @@ body {
 
 #plantCarousel {
     height: 35vh;
-    width: 50vw;
+    width: 25vw;
     margin: auto;
 }
 
@@ -25,6 +25,30 @@ body {
 
 #logo {
     height: 50vh;
-    width: 50vw;
     margin: auto
+}
+
+#rope {
+    margin: auto;
+    height: 100px
+}
+
+#cardCont {
+    width: 18rem;
+}
+
+#cardImg {
+    height: 300px;
+}
+
+#cardBody {
+    height: 150px;
+    text-align: center;
+    background-color: #74b7a0;
+    color: #8c573c;
+}
+
+#cardButton {
+    color: #c57a53;
+    border-color: #c57a53
 }
