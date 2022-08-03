@@ -3,6 +3,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
+import Dropdown from 'react-bootstrap/Dropdown';
 
 // https://www.youtube.com/watch?v=x7niho285qs&t=1900s
 
@@ -15,6 +16,10 @@ const SearchBarContainer = styled.nav`
     /* justify-content: center; */
   }
 
+  .dropdownToggle{
+    display: none;
+  }
+
   .search input {
   background-color: white;
   border: 0;
@@ -24,12 +29,12 @@ const SearchBarContainer = styled.nav`
   font-size: 18px;
   padding: 15px;
   height: 30px;
-  width: 300px;
+  width: 350px;
 }
 
 .searchIcon {
-  height: 60px;
-  width: 50px;
+  height: 30px;
+  width: 30px;
   background-color: white;
   display: grid;
   place-items: center;
@@ -39,7 +44,8 @@ input:focus {
   outline: none;
 }
 .searchIcon svg {
-  font-size: 35px;
+  font-size: 15px;
+  margin: 0px;
 }
 
   .dataResult {
@@ -66,6 +72,7 @@ input:focus {
 .dataItem p {
   margin-left: 10px;
 }
+
 .link {
   text-decoration: none;
 }
@@ -80,7 +87,8 @@ input:focus {
 `;
 
 
-function SearchBar({placeholder, data}) {
+function SearchBar({placeholder, data, closeModal}) {
+
 
     const [filteredData, setFilteredData] = useState([])
     const [wordEntered, setWordEntered] = useState("")
@@ -103,30 +111,73 @@ function SearchBar({placeholder, data}) {
         setWordEntered("")
     }
 
+    // https://bobbyhadz.com/blog/react-add-remove-class-on-click
+
+    const handleClick = (e) =>{
+      e.currentTarget.classList.toggle('dropdownToggle')
+    }
+
   return (
-      <SearchBarContainer className="search">
-        <div className="searchInputs">
-            <input type="text" 
-            placeholder={placeholder} 
-            value={wordEntered} 
-            onChange={handleFilter} />
-            <div className="searchIcon">
-                {filteredData.length === 0 ?<SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput} />}
-            </div>
-        </div>
+ 
+    
+    <SearchBarContainer className="search">
+    <Dropdown className="d-inline mx-2" >
+        <Dropdown.Toggle id="dropdown-autoclose-true">
+          <div>
+          <input type="text" 
+             placeholder={placeholder} 
+             value={wordEntered} 
+             onChange={handleFilter} />
+             {/* <div className="searchIcon">
+                 {filteredData.length === 0 ? null : <CloseIcon id="clearBtn" onClick={clearInput} />}
+             </div> */}
+         </div>
+          
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu onClick={handleClick}>
         {filteredData.length !== 0 && (
-        <div className="dataResult">
-            {filteredData.map((item, key) =>{
-                return (<Link to={`/item/${item._id}`} > 
-                <p className="link">
-                    {item.name}
-                </p> 
-                </Link>)
-                
-            })}
-        </div>
-        )}
+         <div className="dataResult">
+             {filteredData.map((item, key) =>{
+                 return (<Link onClick={clearInput} to={`/item/${item._id}`} > 
+                 <p className="link">
+                   {item.name}
+                 </p> 
+                 </Link>)
+             })}
+            
+         </div>
+         )}
+        </Dropdown.Menu>
+      </Dropdown>
     </SearchBarContainer>
+    
+    //   <SearchBarContainer className="search">
+    //     <div className="searchInputs">
+    //         <input type="text" 
+    //         placeholder={placeholder} 
+    //         value={wordEntered} 
+    //         onChange={handleFilter} />
+    //         <div className="searchIcon">
+    //             {filteredData.length === 0 ?<SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput} />}
+    //         </div>
+    //     </div>
+    //     {filteredData.length !== 0 && (
+    //     <div className="dataResult">
+    //         {filteredData.map((item, key) =>{
+    //             return (<Link onClick={clearInput} to={`/item/${item._id}`} > 
+    //             <p className="link">
+    //               {item.name}
+    //             </p> 
+    //             </Link>)
+    //         })}
+            
+    //     </div>
+    //     )}
+    // </SearchBarContainer>
+
+
+
   )
 }
 

@@ -43,7 +43,7 @@ function App() {
   return (
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
-      <SearchBar placeholder="Search for Plants..." data={items}/>
+      {/* <SearchBar placeholder="Search for Plants..." data={items}/> */}
       <Routes>
        <Route
           path="/"
@@ -56,7 +56,7 @@ function App() {
           path="/item/edit/:id/"
           element={<ItemEdit setItems={setItems} />}
         />
-        <Route path="/item/:id" element={<ItemView items={items} />} />
+        <Route path="/item/:id" element={<ItemView updateItemState={updateItemState} items={items} />} />
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
         <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
       </Routes>

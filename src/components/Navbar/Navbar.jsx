@@ -1,7 +1,14 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
-// import SearchBar from "../SearchBar/SearchBar";
+import SearchBar from "../SearchBar/SearchBar";
 import { Link, useNavigate } from "react-router-dom";
+// import Button from 'react-bootstrap/Button';
+// import Modal from 'react-bootstrap/Modal';
+import SearchIcon from '@mui/icons-material/Search';
+// import Offcanvas from 'react-bootstrap/Offcanvas';
+import ReactDOM from 'react-dom';
+import Modal from 'react-modal';
+
 
 const NavbarContainer = styled.nav`
   background-color: darkgreen;
@@ -16,22 +23,70 @@ const NavbarContainer = styled.nav`
   }
 `;
 
+
 const Navbar = ({ user, handleLogout }) => {
   
-  // const [items, setItems] = useState([]);
+  const [items, setItems] = useState([]);
 
-  // useEffect(() => {
-  //   fetch("http://localhost:8000/item/")
-  //     .then(res => res.json())
-  //     .then(items => setItems(items));
-  // }, []);
+  useEffect(() => {
+    fetch("http://localhost:8000/item/")
+      .then(res => res.json())
+      .then(items => setItems(items));
+  }, []);
+
+
+  const [show, setShow] = useState(false);
+  const handleChange=()=>{
+    setShow(!show);
+}
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+};
+
+let subtitle;
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+  
+    function openModal() {
+      setIsOpen(true);
+    }
+  
+    function afterOpenModal() {
+      // references are now sync'd and can be accessed.
+      subtitle.style.color = '#f00';
+    }
+  
+    function closeModal() {
+      setIsOpen(false);
+    }
 
   console.log(user)
   let nav = user ? 
       <ul>
-        {/* <li>
+        <li>
+
+          <div>
+          {/* <SearchIcon onClick={openModal}/> */}
+        {/* <button onClick={openModal}>Delete</button> */}
+        {/* <Modal
+          ariaHideApp={false}
+          isOpen={modalIsOpen}
+          onAfterOpen={afterOpenModal}
+          onRequestClose={closeModal}
+          style={customStyles}
+          contentLabel="Example Modal"
+        >
+          <SearchBar placeholder="Search for Plants..." data={items} closeModal={closeModal} />
+        </Modal> */}
+      </div>
           <SearchBar placeholder="Search for Plants..." data={items}/>
-        </li> */}
+        </li>
         <li>
           {" "}
           <Link to="/"> Home </Link>

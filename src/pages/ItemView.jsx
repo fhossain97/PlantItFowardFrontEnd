@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { Link, useParams, useNavigate } from 'react-router-dom'
 
-const ItemView = ({items}) => {
+const ItemView = ({items, updateItemState}) => {
 
     let {id} = useParams()
 
@@ -14,6 +14,7 @@ const ItemView = ({items}) => {
     },[])
 
     console.log(item)
+
 
   return (
     <div>
