@@ -10,6 +10,7 @@ import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
 import bootstrap from "bootstrap";
 import About from "./pages/About";
+import "./index.css";
 
 
 function App() {
@@ -58,10 +59,12 @@ function App() {
           path="/item/edit/:id/"
           element={<ItemEdit setItems={setItems} />}
         />
-        <Route path="/item/:id" element={<ItemView items={items} />} />
+        <Route path="/item/:id" element={<ItemView updateItemState={updateItemState} items={items}  />} />
+        <Route path="/item/:id" element={<ItemView  items={items} />} />
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
         <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
-      <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About />} />
+      
       </Routes>
     </Layout>
   );
