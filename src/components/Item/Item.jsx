@@ -38,10 +38,7 @@ const Item = ({ item, deleteItem, user }) => {
       </div>
       <img src={item.images} alt='' />
       {/* {user?.isAdmin ? ( */}
-        <>
-  
-          <Button onClick={() => deleteItem(item._id)}>Delete</Button>
-        </>
+       
       {/* ) : null} */}
 
       <Link to={`/item/${item._id}`}>Details</Link>
