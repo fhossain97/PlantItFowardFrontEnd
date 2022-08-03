@@ -9,8 +9,8 @@ const ChatBox = () => {
 <ChatEngine offset={-4}
       height='100vh'
       userName='Mushu'
-      projectID = '6cf48a91-1409-4d81-94ab-92d4c08b6d83'
-      userSecret='bunny'
+      projectID = {process.env.REACT_APP_CHAT_APP_PROJECT_ID}
+      userSecret={process.env.REACT_APP_CHAT_APP_USER_SECRET}
      
     />
 

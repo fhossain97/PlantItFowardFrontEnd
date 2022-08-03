@@ -9,7 +9,7 @@ import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
 import bootstrap from "bootstrap";
-import About from "./pages/About";
+import FindFlorist from "./pages/FindFlorist.jsx";
 import Chat from "./pages/Chat"
 
 
@@ -62,7 +62,7 @@ function App() {
         <Route path="/item/:id" element={<ItemView items={items} />} />
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
         <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
-      <Route path="/about" element={<About />} />
+      <Route path="/findflorist" element={<FindFlorist />}/>
       <Route path="/chat" element={<Chat />} />
       </Routes>
     </Layout>
