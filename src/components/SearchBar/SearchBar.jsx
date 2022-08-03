@@ -8,7 +8,6 @@ import Dropdown from 'react-bootstrap/Dropdown';
 // https://www.youtube.com/watch?v=x7niho285qs&t=1900s
 
 const SearchBarContainer = styled.nav`
-
   .searchInputs {
     display: flex;
     justify-content: center;

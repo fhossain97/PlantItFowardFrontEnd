@@ -28,7 +28,6 @@ const Navbar = ({ user, handleLogout }) => {
       .then(items => setItems(items));
   }, []);
 
-
   console.log(user)
   let nav = user ? 
       <ul>
