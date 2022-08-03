@@ -2,12 +2,6 @@ import React, {useEffect, useState} from "react";
 import styled from "styled-components";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link, useNavigate } from "react-router-dom";
-// import Button from 'react-bootstrap/Button';
-// import Modal from 'react-bootstrap/Modal';
-import SearchIcon from '@mui/icons-material/Search';
-// import Offcanvas from 'react-bootstrap/Offcanvas';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
 
 
 const NavbarContainer = styled.nav`
@@ -35,58 +29,9 @@ const Navbar = ({ user, handleLogout }) => {
   }, []);
 
 
-  const [show, setShow] = useState(false);
-  const handleChange=()=>{
-    setShow(!show);
-}
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
-let subtitle;
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-  
-    function openModal() {
-      setIsOpen(true);
-    }
-  
-    function afterOpenModal() {
-      // references are now sync'd and can be accessed.
-      subtitle.style.color = '#f00';
-    }
-  
-    function closeModal() {
-      setIsOpen(false);
-    }
-
   console.log(user)
   let nav = user ? 
       <ul>
-        <li>
-
-          <div>
-          {/* <SearchIcon onClick={openModal}/> */}
-        {/* <button onClick={openModal}>Delete</button> */}
-        {/* <Modal
-          ariaHideApp={false}
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-          <SearchBar placeholder="Search for Plants..." data={items} closeModal={closeModal} />
-        </Modal> */}
-      </div>
-          <SearchBar placeholder="Search for Plants..." data={items}/>
-        </li>
         <li>
           {" "}
           <Link to="/"> Home </Link>
@@ -113,6 +58,9 @@ let subtitle;
         </li>
         <li>
           <Link to='' onClick={handleLogout}>Log Out</Link>
+        </li>
+        <li>
+          <SearchBar placeholder="Search for Plants..." data={items}/>
         </li>
       </ul> 
       :

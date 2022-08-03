@@ -9,11 +9,9 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 const SearchBarContainer = styled.nav`
 
-    /* background-color:black; */
-
   .searchInputs {
     display: flex;
-    /* justify-content: center; */
+    justify-content: center;
   }
 
   .dropdownToggle{
@@ -43,22 +41,24 @@ const SearchBarContainer = styled.nav`
 input:focus {
   outline: none;
 }
+
 .searchIcon svg {
   font-size: 15px;
   margin: 0px;
 }
 
-  .dataResult {
-    margin-top: 5px;
-    width: 300px;
-    height: 80px;
-    background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    overflow: hidden;
-    overflow-y: auto;
-  }
-  .dataResult::-webkit-scrollbar {
-  display: none;
+.dataResult {
+  margin-top: 5px;
+  width: 300px;
+  height: 80px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.dataResult::-webkit-scrollbar {
+display: none;
 }
 
 .dataResult .dataItem {
@@ -87,8 +87,7 @@ input:focus {
 `;
 
 
-function SearchBar({placeholder, data, closeModal}) {
-
+function SearchBar({placeholder, data}) {
 
     const [filteredData, setFilteredData] = useState([])
     const [wordEntered, setWordEntered] = useState("")
@@ -115,10 +114,10 @@ function SearchBar({placeholder, data, closeModal}) {
 
     const handleClick = (e) =>{
       e.currentTarget.classList.toggle('dropdownToggle')
-    }
+      window.location.reload(true)
 
+    }
   return (
- 
     
     <SearchBarContainer className="search">
     <Dropdown className="d-inline mx-2" >
@@ -129,7 +128,7 @@ function SearchBar({placeholder, data, closeModal}) {
              value={wordEntered} 
              onChange={handleFilter} />
              {/* <div className="searchIcon">
-                 {filteredData.length === 0 ? null : <CloseIcon id="clearBtn" onClick={clearInput} />}
+                 {filteredData.length === 0 ? <SearchIcon /> : <CloseIcon id="clearBtn" onClick={clearInput} />}
              </div> */}
          </div>
           
@@ -137,47 +136,21 @@ function SearchBar({placeholder, data, closeModal}) {
 
         <Dropdown.Menu onClick={handleClick}>
         {filteredData.length !== 0 && (
-         <div className="dataResult">
+          
+          <div className="dataResult">
              {filteredData.map((item, key) =>{
-                 return (<Link onClick={clearInput} to={`/item/${item._id}`} > 
+                 return (<Link onClick={clearInput} to={`/item/${item._id}` } > 
                  <p className="link">
                    {item.name}
                  </p> 
                  </Link>)
-             })}
-            
+              })}
          </div>
          )}
         </Dropdown.Menu>
       </Dropdown>
     </SearchBarContainer>
     
-    //   <SearchBarContainer className="search">
-    //     <div className="searchInputs">
-    //         <input type="text" 
-    //         placeholder={placeholder} 
-    //         value={wordEntered} 
-    //         onChange={handleFilter} />
-    //         <div className="searchIcon">
-    //             {filteredData.length === 0 ?<SearchIcon/> : <CloseIcon id="clearBtn" onClick={clearInput} />}
-    //         </div>
-    //     </div>
-    //     {filteredData.length !== 0 && (
-    //     <div className="dataResult">
-    //         {filteredData.map((item, key) =>{
-    //             return (<Link onClick={clearInput} to={`/item/${item._id}`} > 
-    //             <p className="link">
-    //               {item.name}
-    //             </p> 
-    //             </Link>)
-    //         })}
-            
-    //     </div>
-    //     )}
-    // </SearchBarContainer>
-
-
-
   )
 }
 
