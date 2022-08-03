@@ -7,8 +7,7 @@ import ItemEdit from "./pages/ItemEdit";
 import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
-import SignupTest from "./pages/Signup";
-import bootstrap from "bootstrap";
+import Signup from "./pages/Signup";
 
 function App() {
 
@@ -55,7 +54,7 @@ function App() {
         />
         <Route path="/item/:id" element={<ItemView items={items} />} />
         <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
-        <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
+        <Route path="/signup" element={<Signup handleSignupOrLogin={handleSignupOrLogin}/>}/>
       </Routes>
     </Layout>
   );

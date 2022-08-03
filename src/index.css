@@ -1,3 +1,30 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: #f4e9d1;
+}
+
+#login, #signup {
+    border: none;
+    background-color: #c57a53;
+    color: #f4e9d1;
+    width: 25vw;
+}
+
+#plantCarousel {
+    height: 35vh;
+    width: 50vw;
+    margin: auto;
+}
+
+#bottom {
+    padding: 50px
+}
+
+#logo {
+    height: 50vh;
+    width: 50vw;
+    margin: auto
+}
