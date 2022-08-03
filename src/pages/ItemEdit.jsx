@@ -29,9 +29,14 @@ const ItemEdit = ({ setItems }) => {
   };
 
   const handleSubmit = (e) => {
+    e.preventDefault()
+    const images = new FormData();
+    images.append("images", formData.images);
+    images.append("name", formData.name);
+    console.log(formData)
     e.preventDefault();
     console.log(formData);
-    axios.put(`http://localhost:8000/item/${id}`, formData).then((res) => {
+    axios.put(`http://localhost:8000/item/${id}`, images).then((res) => {
       setFormData(initialState);
       setItems(res.data);
       navigate("/", { replace: true });
@@ -45,9 +50,13 @@ const ItemEdit = ({ setItems }) => {
     });
   }, [id]);
 
+  const handleFile = (e) => {
+    console.log(e.target)
+    setFormData({...formData, [e.target.id] : e.target.files[0]})
+}
 
   return (
-    <StyledForm onSubmit={handleSubmit}>
+    <StyledForm onSubmit={handleSubmit} encType="multipart/form-data">
       <div>
         <label htmlFor="name">Name</label>
         <input 
@@ -70,12 +79,13 @@ const ItemEdit = ({ setItems }) => {
       </div>
 
       <div>
-        <label htmlFor="images">Image</label>
-        <input 
-          id="images" 
-          name="images" 
-          type="text" 
-          onChange={handleChange} />
+      <label htmlFor="images">Image</label>
+      <input
+      name="images"
+      id="images"
+      type="file"
+      accept="image/png, image/jpeg, image/jpg"
+      onChange={handleFile} />
       </div>
 
       <div>

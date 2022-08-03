@@ -14,6 +14,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [user, setUser] = useState({});
 
+
   useEffect(() => {
     fetch("http://localhost:8000/item/")
       .then(res => res.json())
@@ -37,6 +38,8 @@ function App() {
   const updateItemState = (id) => {
     setItems(items.filter((item) => item._id !== id));
   };
+
+  
 
   return (
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
