@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
-import SearchIcon from '@mui/icons-material/Search';
-import CloseIcon from '@mui/icons-material/Close';
+// import SearchIcon from '@mui/icons-material/Search';
+// import CloseIcon from '@mui/icons-material/Close';
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
@@ -138,8 +138,8 @@ function SearchBar({placeholder, data}) {
         {filteredData.length !== 0 && (
           
           <div className="dataResult">
-             {filteredData.map((item, key) =>{
-                 return (<Link onClick={clearInput} to={`/item/${item._id}` } > 
+             {filteredData.map((item) =>{
+                 return (<Link key={item._id} onClick={clearInput} to={`/item/${item._id}`  } > 
                  <p className="link">
                    {item.name}
                  </p> 
