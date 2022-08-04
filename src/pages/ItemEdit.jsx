@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import styled from "styled-components";
+//import styled from "styled-components";
 import "../components/FormStyle/Form.css"
 
-const StyledForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
+// const StyledForm = styled.form`
+//   display: flex;
+//   flex-direction: column;
+// `;
 
 const ItemEdit = ({ setItems }) => {
   let { id } = useParams();
@@ -55,7 +55,7 @@ const ItemEdit = ({ setItems }) => {
   };
 
   return (
-    <StyledForm onSubmit={handleSubmit} encType="multipart/form-data">
+    <form onSubmit={handleSubmit} encType="multipart/form-data">
       <h1> Edit {formData.name} </h1>
       
       <div>
@@ -129,7 +129,7 @@ const ItemEdit = ({ setItems }) => {
           Edit Plant{" "}
         </button>
       </div>
-    </StyledForm>
+    </form>
   );
 };
 

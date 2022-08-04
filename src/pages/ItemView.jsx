@@ -1,14 +1,10 @@
 import React, {useState, useEffect} from 'react'
-<<<<<<< HEAD
-import { Link, useParams } from 'react-router-dom'
 import ChatBox from '../components/ChatBox/ChatBox'
-=======
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import styled from "styled-components";
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
->>>>>>> development
 
 const Button = styled.button`
   background: transparent;
@@ -46,7 +42,7 @@ const ItemView = ({items, updateItemState}) => {
         fetch(`http://localhost:8000/item/${id}`)
         .then(res => res.json())
         .then(data => setItem(data))
-    })
+    }, [id])
 
     //console.log(item)
 

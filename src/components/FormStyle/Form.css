@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie Flower');
 
-body, html {
+body {
     font-family: Indie Flower; 
-    background-image: url('./images.jpg');
+    background-image: url('./images-1.jpg');
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
 }
 
 h1{

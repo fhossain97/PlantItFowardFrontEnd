@@ -28,6 +28,11 @@ const SearchBarContainer = styled.nav`
   height: 30px;
   width: 350px;
 }
+  
+input[type="text"]:focus {
+      background-color: #D0F0C0;
+      color:black
+    }
 
 .searchIcon {
   height: 30px;
@@ -37,9 +42,9 @@ const SearchBarContainer = styled.nav`
   place-items: center;
 }
 
-input:focus {
+/* input:focus {
   outline: none;
-}
+} */
 
 .searchIcon svg {
   font-size: 15px;
@@ -83,7 +88,9 @@ display: none;
 #clearBtn {
   cursor: pointer;
 }
+
 `;
+
 
 
 function SearchBar({placeholder, data}) {
