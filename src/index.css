@@ -2,3 +2,53 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+    background-color: #f4e9d1;
+}
+
+#login, #signup {
+    border: none;
+    background-color: #c57a53;
+    color: #f4e9d1;
+    width: 25vw;
+}
+
+#plantCarousel {
+    height: 35vh;
+    width: 25vw;
+    margin: auto;
+}
+
+#bottom {
+    padding: 50px
+}
+
+#logo {
+    height: 50vh;
+    margin: auto
+}
+
+#rope {
+    margin: auto;
+    height: 100px
+}
+
+#cardCont {
+    width: 18rem;
+}
+
+#cardImg {
+    height: 300px;
+}
+
+#cardBody {
+    height: 150px;
+    text-align: center;
+    background-color: #74b7a0;
+    color: #8c573c;
+}
+
+#cardButton {
+    color: #c57a53;
+    border-color: #c57a53
+}

@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from "react";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link, useNavigate } from "react-router-dom";
 
 
 const NavbarContainer = styled.nav`
-  background-color: darkgreen;
+  background-color: #f4e9d1;
   padding: 5px;
 
   ul {
@@ -14,6 +15,7 @@ const NavbarContainer = styled.nav`
   }
   li {
     list-style: none;
+    color: #8c573c;
   }
 `;
 
@@ -53,7 +55,7 @@ const Navbar = ({ user, handleLogout }) => {
         </li>
         <li>
           {" "}
-          Hello @{user.name}
+          Hello {user.name}
         </li>
         <li>
           <Link to='' onClick={handleLogout}>Log Out</Link>
@@ -62,20 +64,17 @@ const Navbar = ({ user, handleLogout }) => {
           <SearchBar placeholder="Search for Plants..." data={items}/>
         </li>
       </ul> 
-      :
-       <ul>
-         <li>
-          {" "}
-          <Link to="/"> Home </Link>
-        </li>
-        <li>
-          {" "}
-          <Link to="/login"> Login </Link>
-        </li><li>
-          {" "}
-          <Link to="/signup"> Signup </Link>
-        </li>
-       </ul>
+      : null
+      //  <ul>
+      //    <li>
+      //     {" "}
+      //     <Link to="/"> Home </Link>
+      //   </li>
+      //   <li>
+      //     {" "}
+      //     <Link to="/about"> About </Link>
+      //   </li>
+      //  </ul>
 
     return (
       <NavbarContainer>
