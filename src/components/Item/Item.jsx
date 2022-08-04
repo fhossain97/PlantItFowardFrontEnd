@@ -7,7 +7,7 @@ import Rope from '../../assets/images/rope2.png'
 
 const Item = ({ item, deleteItem, user }) => {
 
-  console.log(item)
+  //console.log(item)
   return (
     <Container id='cardCont' key={item._id}>
       <img id='rope' src={Rope} alt='rope'/>

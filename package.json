@@ -3,12 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+<<<<<<< HEAD
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "@heroicons/react": "^1.0.6",
+    "@react-google-maps/api": "^2.12.1",
+=======
     "@emotion/react": "^11.9.3",
     "@emotion/styled": "^11.9.3",
     "@heroicons/react": "^1.0.6",
     "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.2",
     "@mui/styled-engine-sc": "^5.8.0",
+>>>>>>> d3562153b2ca057b48c3573e945871238f05148a
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -20,6 +26,7 @@
     "quick-sort": "^0.2.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
+    "react-chat-engine": "^1.11.23",
     "react-dom": "^18.2.0",
     "react-modal": "^3.15.1",
     "react-router-dom": "^6.3.0",

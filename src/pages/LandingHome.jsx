@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col';
 import Carousel  from 'react-bootstrap/Carousel';
 
 const Home = ({ items, updateItemState, user }) => {
+
  if(user){
   return (
     <div>
@@ -52,6 +53,8 @@ const Home = ({ items, updateItemState, user }) => {
       </Container>
     )
   }
+
+  
 
 };
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import styled from "styled-components";
+import "../components/FormStyle/Form.css"
 
 const StyledForm = styled.form`
   display: flex;
@@ -9,7 +10,6 @@ const StyledForm = styled.form`
 `;
 
 const ItemEdit = ({ setItems }) => {
-
   let { id } = useParams();
   let navigate = useNavigate();
 
@@ -24,18 +24,18 @@ const ItemEdit = ({ setItems }) => {
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
-    console.log(e.target);
+    //console.log(e.target);
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const images = new FormData();
     images.append("images", formData.images);
     images.append("name", formData.name);
-    console.log(formData)
+    //console.log(formData)
     e.preventDefault();
-    console.log(formData);
+    //console.log(formData);
     axios.put(`http://localhost:8000/item/${id}`, images).then((res) => {
       setFormData(initialState);
       setItems(res.data);
@@ -44,27 +44,29 @@ const ItemEdit = ({ setItems }) => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/item/${id}`)
-    .then((res) => {
-    setFormData(res.data);
+    axios.get(`http://localhost:8000/item/${id}`).then((res) => {
+      setFormData(res.data);
     });
   }, [id]);
 
   const handleFile = (e) => {
-    console.log(e.target)
-    setFormData({...formData, [e.target.id] : e.target.files[0]})
-}
+    //console.log(e.target)
+    setFormData({ ...formData, [e.target.id]: e.target.files[0] });
+  };
 
   return (
     <StyledForm onSubmit={handleSubmit} encType="multipart/form-data">
+      <h1> Edit {formData.name} </h1>
+      
       <div>
         <label htmlFor="name">Name</label>
-        <input 
-          id="name" 
-          name="name" 
-          type="text" 
+        <input
+          id="name"
+          name="name"
+          type="text"
           value={formData.name}
-          onChange={handleChange} />
+          onChange={handleChange}
+        />
       </div>
 
       <div>
@@ -79,47 +81,54 @@ const ItemEdit = ({ setItems }) => {
       </div>
 
       <div>
-      <label htmlFor="images">Image</label>
-      <input
-      name="images"
-      id="images"
-      type="file"
-      accept="image/png, image/jpeg, image/jpg"
-      onChange={handleFile} />
-      </div>
-
-      <div>
         <label htmlFor="description">Description</label>
         <input
           id="description"
           name="description"
           type="text"
           value={formData.description}
-          onChange={handleChange} />
+          onChange={handleChange}
+        />
       </div>
 
       <div>
         <label htmlFor="genus">Genus</label>
-        <input 
-          id="genus" 
-          name="genus" 
-          type="text" 
+        <input
+          id="genus"
+          name="genus"
+          type="text"
           value={formData.genus}
-          onChange={handleChange} />
+          onChange={handleChange}
+        />
       </div>
 
       <div>
         <label htmlFor="status">Status</label>
-        <input 
-          id="status" 
-          name="status" 
-          type="text" 
+        <input
+          id="status"
+          name="status"
+          type="text"
           value={formData.status}
-          onChange={handleChange} />
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <label htmlFor="images">Image</label>
+        <input
+          name="images"
+          id="images"
+          type="file"
+          accept="image/png, image/jpeg, image/jpg"
+          onChange={handleFile}
+        />
       </div>
 
-      <input type="submit" value="Edit Item" />
-
+      <div class="button">
+        <button id="new" type="submit">
+          {" "}
+          Edit Plant{" "}
+        </button>
+      </div>
     </StyledForm>
   );
 };
