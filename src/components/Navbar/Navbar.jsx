@@ -172,8 +172,6 @@ const Navbar = ({ user, handleLogout }) => {
   );
 
 
- 
-
   return (
   <nav>{nav}</nav>
   );
