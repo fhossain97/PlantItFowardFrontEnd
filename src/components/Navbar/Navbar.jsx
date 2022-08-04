@@ -21,6 +21,7 @@ const Navbar = ({ user, handleLogout }) => {
   let nav = user ? (
     
     <ul>
+     
     
       <li id="nav">
         
@@ -98,21 +99,24 @@ const Navbar = ({ user, handleLogout }) => {
 
 
 
-        <li class="search">
+      <h1>Plant It Forward</h1>
 
-<SearchBar placeholder="Search for Plants..." data={items}/>
 
-      </li>
-
-     <li class="format">
-      <li> Hello {user.name}</li>
+      <li class="format">
+      <li>Hello! {user.name}</li>
       <li>
         <Link to="" onClick={handleLogout}>
           Log Out
         </Link>
       </li>
       </li>
+  
+      <li class="search">
 
+<SearchBar placeholder="Search for Plants..." data={items}/>
+
+      </li>
+      
 
     </ul>
   ) : (

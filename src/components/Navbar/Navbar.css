@@ -16,8 +16,8 @@ ul{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-image: url('./images-2.jpg');
-   object-fit: cover;
+    background-image: url('./images.jpg');
+
   }
 
   
@@ -25,7 +25,7 @@ ul{
     display: flex;
     align-items: center;
     height: 2rem;
-    color: #004526;
+    color: black;
     text-decoration: none;
     filter: grayscale(100%) opacity(1);
     transition: let(--transition-speed);
@@ -53,11 +53,12 @@ ul{
     background: #71BC78;
     font-size: 15px;
     width: 120px;
-    height: 75px;
+    height: 80px;
     border-radius: 12px 300px 5px 300px;
-    margin-right: 6px;
+    margin-right: 40px;
+
 justify-items: center;
-background-image: url('./download.jpg')
+background-image: url('./leaf.jpg')
  
   }
   
@@ -73,11 +74,34 @@ background-image: url('./download.jpg')
 }
 
 .format{
-    color: #fffacd !important;
-    display: block;
-    text-align: right;
-    margin-left: 50vw;
-    font-size: 28px;
-    opacity: 1
+  color: light gray !important;
+  padding-left: 120px;
+  text-align: center;
+  font-size: 28px;
 
+}
+
+
+
+.search {
+  position:relative; 
+  left: 20px;
+ 
+}
+h1 {
+  animation: glow 8s ease-in-out infinite;
+  font-size: 80px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  color: black;
+  padding-left: 80px;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px gold;
+  }
+  to {
+    text-shadow: 0 0 20px darkgreen;
+  }
 }

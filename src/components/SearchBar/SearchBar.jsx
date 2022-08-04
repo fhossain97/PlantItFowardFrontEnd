@@ -88,7 +88,6 @@ display: none;
 #clearBtn {
   cursor: pointer;
 }
-
 `;
 
 
