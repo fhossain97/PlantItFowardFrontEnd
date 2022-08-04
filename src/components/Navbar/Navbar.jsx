@@ -1,32 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
 import "./Navbar.css";
 import React, {useEffect, useState} from "react";
-import styled from "styled-components";
-import { Link } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
+import "./Navbar.css"
 
-
-const NavbarContainer = styled.nav`
-  background-color: #f4e9d1;
-  padding: 5px;
-
-  ul {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  li {
-    list-style: none;
-    color: #8c573c;
-  }
-`;
 
 
 const Navbar = ({ user, handleLogout }) => {
+
+  
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:8000/item/")
+      .then(res => res.json())
+      .then(items => setItems(items));
+  }, []);
+
+
   let nav = user ? (
+    
     <ul>
+    
       <li id="nav">
+        
         <a href="/#">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +75,7 @@ const Navbar = ({ user, handleLogout }) => {
             <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
             <path d="m2.165 15.803.02-.004c1.83-.363 2.948-.842 3.468-1.105A9.06 9.06 0 0 0 8 15c4.418 0 8-3.134 8-7s-3.582-7-8-7-8 3.134-8 7c0 1.76.743 3.37 1.97 4.6a10.437 10.437 0 0 1-.524 2.318l-.003.011a10.722 10.722 0 0 1-.244.637c-.079.186.074.394.273.362a21.673 21.673 0 0 0 .693-.125zm.8-3.108a1 1 0 0 0-.287-.801C1.618 10.83 1 9.468 1 8c0-3.192 3.004-6 7-6s7 2.808 7 6c0 3.193-3.004 6-7 6a8.06 8.06 0 0 1-2.088-.272 1 1 0 0 0-.711.074c-.387.196-1.24.57-2.634.893a10.97 10.97 0 0 0 .398-2z" />
           </svg>
-          <Link to="/chat"> Chat With Us! </Link>
+          <Link to="/chat"> Chat With Us </Link>
         </a>
       </li>
 
@@ -96,17 +93,32 @@ const Navbar = ({ user, handleLogout }) => {
           </svg>
           <Link to="/findflorist"> Find Florists </Link>
         </a>
+
+        </li>
+
+
+
+        <li class="search">
+
+<SearchBar placeholder="Search for Plants..." data={items}/>
+
       </li>
 
-      <li class="format"> Hello @{user.name}</li>
-      <li class="format">
+     <li class="format">
+      <li> Hello {user.name}</li>
+      <li>
         <Link to="" onClick={handleLogout}>
           Log Out
         </Link>
       </li>
+      </li>
+
+
     </ul>
   ) : (
+ 
     <ul>
+    
  <li id="nav">
         <a href="/#">
           <svg
@@ -154,60 +166,9 @@ const Navbar = ({ user, handleLogout }) => {
 
 </ul>
   );
-  
-  const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    fetch("http://localhost:8000/item/")
-      .then(res => res.json())
-      .then(items => setItems(items));
-  }, []);
 
-  console.log(user)
-  let nav = user ? 
-      <ul>
-        <li>
-          {" "}
-          <Link to="/"> Home </Link>
-        </li>
-        <li>
-          {" "}
-          <Link to="/new-item"> Trade </Link>
-        </li>
-        <li>
-          {" "}
-          <Link to="/items"> Previous Orders </Link>
-        </li>
-        <li>
-          {" "}
-          <Link to="/items/:id"> Order </Link>
-        </li>
-        <li>
-          {" "}
-          <Link to="/about"> About </Link>
-        </li>
-        <li>
-          {" "}
-          Hello {user.name}
-        </li>
-        <li>
-          <Link to='' onClick={handleLogout}>Log Out</Link>
-        </li>
-        <li>
-          <SearchBar placeholder="Search for Plants..." data={items}/>
-        </li>
-      </ul> 
-      : null
-      //  <ul>
-      //    <li>
-      //     {" "}
-      //     <Link to="/"> Home </Link>
-      //   </li>
-      //   <li>
-      //     {" "}
-      //     <Link to="/about"> About </Link>
-      //   </li>
-      //  </ul>
+ 
 
   return (
   <nav>{nav}</nav>
