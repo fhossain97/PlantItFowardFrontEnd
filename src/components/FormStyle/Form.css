@@ -2,9 +2,10 @@
 
 body {
     font-family: Indie Flower; 
-    background-image: url('./images-1.jpg');
+    /* background-image: url('./11.jpg'); */
     /* background-repeat: no-repeat; */
     /* background-size: cover; */
+    background-image: linear-gradient(#fffdd0, #fdfd96, #01796F, #006241);
 }
 
 h1{
@@ -12,7 +13,7 @@ h1{
     text-align: center;
     color:#004526;
 font-weight: bolder;
-padding: 20px
+padding: 20px;
   }
   
   
