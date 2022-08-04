@@ -46,7 +46,7 @@ const ItemView = ({items, updateItemState}) => {
         fetch(`http://localhost:8000/item/${id}`)
         .then(res => res.json())
         .then(data => setItem(data))
-    },[id])
+    })
 
     //console.log(item)
 
