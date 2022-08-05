@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Indie Flower');
+
+body {
+    font-family: Indie Flower; 
+    color: black;
+    font-size: 16px;
+    --transition-speed: 600ms;
+ 
+    
+}
+
+  
+ul{
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #fefdb8;
+  }
+
+  
+  a {
+    display: flex;
+    align-items: center;
+    height: 2rem;
+    color: black;
+    text-decoration: none;
+    filter: grayscale(100%) opacity(1);
+    transition: let(--transition-speed);
+    display: inline-block;
+    margin-top: 2px
+  }
+  
+  #nav:hover {
+    filter: grayscale(0%) opacity(1);
+    background: #D0F0C0;
+    color: #fffacd;
+  }
+
+  
+  a svg {
+    width: 1rem;
+    min-width: 2rem;
+    margin: 0 rem;
+  }
+  
+  
+#nav{
+    text-align: center;
+    color: black;
+    background: #71BC78;
+    font-size: 15px;
+    width: 120px;
+    height: 80px;
+    border-radius: 12px 300px 5px 300px;
+    margin-right: 40px;
+
+justify-items: center;
+background-image: url('./leaf.jpg')
+ 
+  }
+  
+
+  li svg:hover{
+    animation: spin 2s linear infinite;
+  }
+
+  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% {  transform: rotate(359deg); }
+}
+
+.format{
+  color: light gray !important;
+  padding-left: 120px;
+  text-align: center;
+  font-size: 28px;
+
+}
+
+
+
+.search {
+  position:relative; 
+  left: 20px;
+ 
+}
+h1 {
+  animation: glow 8s ease-in-out infinite;
+  font-size: 80px;
+  font-weight: lighter;
+  margin-bottom: 5px;
+  color: black;
+  padding-left: 80px;
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px gold;
+  }
+  to {
+    text-shadow: 0 0 20px darkgreen;
+  }
+}

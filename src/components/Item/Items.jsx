@@ -1,34 +1,38 @@
-import React from 'react'
-import styled from 'styled-components'
-import axios from 'axios'
-import Item from './Item'
-const ItemBox = styled.div`
-    background-color: green;
-    min-width: 100vw;
-    display:  flex;
-    flex-wrap: wrap;
-    gap: 10px;
-`
+import React from "react";
+import axios from "axios";
+import Item from "./Item";
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+
 
 const Items = ({ items, updateItemState, user }) => {
+  const deleteItem = (id) => {
+    axios.delete(`http://localhost:8000/item/${id}`).then((res) => {
+      //console.log(res);
+      updateItemState(id);
+    });
+  };
 
-    const deleteItem = (id) => {
-        axios.delete(`http://localhost:3000/item/${id}`)
-        .then(res => {
-            console.log(res)
-            updateItemState(id)
-        })
-    }
-
-    return (
-        <ItemBox>
-            { 
-              items.length === 0 ? 'Sorry! This plant is no longer available.' :  (items.map( item => {
-                    return <Item key={item._id} item={item} deleteItem={deleteItem} user={user}/>
-                }))
-            }
-        </ItemBox>
-
-)
-}
-export default Items
+  return (
+    <Container>
+      <Row>
+      {items.length === 0
+        ? "Sorry! No plants available to trade at this time."
+        : items.map((item) => {
+            return (
+                <Col>
+                  <Item
+                    key={item._id}
+                    item={item}
+                    deleteItem={deleteItem}
+                    user={user}
+                  />
+                </Col>
+            );
+          })}
+      </Row>
+    </Container>
+  );
+};
+export default Items;
