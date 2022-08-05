@@ -26,7 +26,7 @@ const NewItem = ({ addItem }) => {
     images.append("name", formData.name);
     // images.append("file", formData.images);
     console.log(formData);
-    axios.post("http://localhost:8000/item", images).then((res) => {
+    axios.post(`${process.env.REACT_APP_PIF_API_URL}/item`, images).then((res) => {
       setFormData(initialState);
       addItem(res.data);
       navigate("/", { replace: true });
@@ -84,7 +84,7 @@ const NewItem = ({ addItem }) => {
         />
       </div>
 
-      <div class="button"><button id="new" type="submit"> New Plant </button></div>
+      <div className="button"><button id="new" type="submit"> New Plant </button></div>
     </form>
   );
 };

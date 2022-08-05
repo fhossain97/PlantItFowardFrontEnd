@@ -21,7 +21,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8000/item/")
+    fetch(process.env.REACT_APP_PIF_API_URL)
       .then(res => res.json())
       .then(items => setItems(items));
   }, []);
