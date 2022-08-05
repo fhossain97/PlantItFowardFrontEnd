@@ -1,5 +1,5 @@
 import tokenService from "./tokenService";
-const BASE_URL = 'http://localhost:8000/user/';
+const BASE_URL = `${process.env.REACT_APP_PIF_API_URL}/user`;
 
 function signup(user) {
   return fetch(BASE_URL + 'signup', {

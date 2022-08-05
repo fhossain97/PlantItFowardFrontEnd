@@ -12,7 +12,7 @@ const Multer = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append("images", upload);
-    axios.post("http://localhost:8000/item/", formData, {}).then((res) => {
+    axios.post(process.env.REACT_APP_PIF_API_URL, formData, {}).then((res) => {
       console.log(res);
     });
   };
