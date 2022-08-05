@@ -88,6 +88,10 @@ display: none;
 #clearBtn {
   cursor: pointer;
 }
+
+.dropdownColor {
+  background-color: transparent;
+}
 `;
 
 
@@ -123,9 +127,9 @@ function SearchBar({placeholder, data}) {
     }
   return (
     
-    <SearchBarContainer className="search">
-    <Dropdown className="d-inline mx-2" >
-        <Dropdown.Toggle id="dropdown-autoclose-true">
+    <SearchBarContainer className="search outline-none" >
+    <Dropdown  className="d-inline mx-2 dropdownColor" >
+        <Dropdown.Toggle variant='outline-success' id="dropdown-autoclose-true">
           <div>
           <input type="text" 
              placeholder={placeholder} 
