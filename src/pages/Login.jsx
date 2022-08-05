@@ -2,20 +2,6 @@ import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import userToken from '../utils/userService'
 
-<<<<<<< HEAD
-
-const StyledForm = styled.form`
-    display: flex;
-    flex-direction: column;
-    min-width: 250px;
-    max-width: 50vw;
-    align-items: baseline;
-    div input {
-        margin-right: 25px;
-    }
-`
-=======
->>>>>>> development
 
 const LoginTest = ({handleSignupOrLogin}) => {
 
@@ -92,17 +78,9 @@ const LoginTest = ({handleSignupOrLogin}) => {
             Sign in
           </button>
         </div>
-<<<<<<< HEAD
-
-        <input type='submit' value='Log In' />
-        <imageUpload />
-
-    </StyledForm>
-=======
       </form>
     </div>
   </div>
->>>>>>> development
   )
 }
 

@@ -1,17 +1,3 @@
-<<<<<<< HEAD
-import './App.css';
-import { useState, useEffect } from 'react'
-import styled from 'styled-components'
-import { Routes, Route } from 'react-router-dom'
-import Home from  './pages/Home'
-import NewItem from './pages/NewItem';
-import Layout from './components/Layout/Layout';
-import ItemView from './pages/ItemView';
-import ItemEdit from './pages/ItemEdit';
-import Login from './pages/Login'
-import Item from './components/Item/Item';
-
-=======
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import LandingHome from "./pages/LandingHome.jsx";
@@ -27,7 +13,6 @@ import FindFlorist from "./pages/FindFlorist.jsx";
 import Chat from "./pages/Chat"
 
 import Signup from "./pages/Signup";
->>>>>>> development
 
 function App() {
 
@@ -61,20 +46,6 @@ function App() {
 
   
 
-<<<<<<< HEAD
-return (
-<Layout user={user} setUser={setUser}> 
-
-  <Routes>
-      <Route path='/' element={ <Home items={items} updateItemState={updateItemState} user={ user} />} />
-      <Route path='/new-item' element={ <NewItem addItem={addToItem}  />} />
-      <Route path='/item/edit/:id/' element={ <ItemEdit  setItems={setItems} />} />
-      <Route path='/item/:id' element={ <Item items={items}/>} />
-      <Route path='/login' element={ <Login setUser={setUser} />} />
-  </Routes>
-</Layout>
-);
-=======
   return (
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
@@ -99,7 +70,6 @@ return (
       </Routes>
     </Layout>
   );
->>>>>>> development
 }
 
 export default App;
