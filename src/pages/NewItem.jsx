@@ -84,7 +84,7 @@ const NewItem = ({ addItem }) => {
         />
       </div>
 
-      <div class="button"><button id="new" type="submit"> New Plant </button></div>
+      <div className="button"><button id="new" type="submit"> New Plant </button></div>
     </form>
   );
 };

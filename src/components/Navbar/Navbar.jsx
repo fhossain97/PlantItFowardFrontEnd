@@ -31,15 +31,15 @@ const Navbar = ({ user, handleLogout }) => {
             width="22"
             height="22"
             fill="currentColor"
-            class="bi bi-house"
+            className="bi bi-house"
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
             />
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
             />
           </svg>
@@ -54,7 +54,7 @@ const Navbar = ({ user, handleLogout }) => {
             width="22"
             height="22"
             fill="currentColor"
-            class="bi bi-plus-circle-fill"
+            className="bi bi-plus-circle-fill"
             viewBox="0 0 16 16"
           >
             <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
@@ -70,7 +70,7 @@ const Navbar = ({ user, handleLogout }) => {
             width="22"
             height="22"
             fill="currentColor"
-            class="bi bi-chat-dots"
+            className="bi bi-chat-dots"
             viewBox="0 0 16 16"
           >
             <path d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
@@ -87,7 +87,7 @@ const Navbar = ({ user, handleLogout }) => {
             width="22"
             height="22"
             fill="currentColor"
-            class="bi bi-geo-alt-fill"
+            className="bi bi-geo-alt-fill"
             viewBox="0 0 16 16"
           >
             <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z" />
@@ -102,16 +102,16 @@ const Navbar = ({ user, handleLogout }) => {
       <h1>Plant It Forward</h1>
 
 
-      <li class="format">
-      <li>Hello! {user.name}</li>
-      <li>
+      <li className="format">
+      <p>Hello! {user.name}</p>
+      <p>
         <Link to="" onClick={handleLogout}>
           Log Out
         </Link>
-      </li>
+      </p>
       </li>
   
-      <li class="search">
+      <li className="search">
 
 <SearchBar placeholder="Search for Plants..." data={items}/>
 
@@ -130,15 +130,15 @@ const Navbar = ({ user, handleLogout }) => {
             width="22"
             height="22"
             fill="currentColor"
-            class="bi bi-house"
+            className="bi bi-house"
             viewBox="0 0 16 16"
           >
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M2 13.5V7h1v6.5a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V7h1v6.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5zm11-11V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"
             />
             <path
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"
             />
           </svg>
@@ -149,8 +149,8 @@ const Navbar = ({ user, handleLogout }) => {
 <li id="nav">
 <a href="/#">
 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-box-arrow-in-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
-  <path fill-rule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+  <path fillRule="evenodd" d="M6 3.5a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-2a.5.5 0 0 0-1 0v2A1.5 1.5 0 0 0 6.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-8A1.5 1.5 0 0 0 5 3.5v2a.5.5 0 0 0 1 0v-2z"/>
+  <path fillRule="evenodd" d="M11.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H1.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
 </svg>
 <Link to="/login"> Login </Link>
 </a>

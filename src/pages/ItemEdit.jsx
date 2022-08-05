@@ -123,7 +123,7 @@ const ItemEdit = ({ setItems }) => {
         />
       </div>
 
-      <div class="button">
+      <div className="button">
         <button id="new" type="submit">
           {" "}
           Edit Plant{" "}
