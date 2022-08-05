@@ -14,7 +14,7 @@ body {
 }
 
 #plantCarousel {
-    height: 35vh;
+    height: 30vh;
     width: 25vw;
     margin: auto;
 }
@@ -51,4 +51,21 @@ body {
 #cardButton {
     color: #c57a53;
     border-color: #c57a53
+}
+
+#imgDetail {
+    height: 50vh;
+    width: 50vw;
+    margin: auto;
+    border-radius: 25px;
+}
+
+#plantDes {
+    text-align: center;
+    font-size: 40px;
+}
+
+#editButt, #deleteButt{
+    width: 25vw;
+    margin: auto;
 }

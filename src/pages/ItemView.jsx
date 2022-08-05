@@ -1,9 +1,7 @@
 import React, {useState, useEffect} from 'react'
-import ChatBox from '../components/ChatBox/ChatBox'
 import { Link, useParams, useNavigate } from 'react-router-dom'
 import axios from "axios";
 import styled from "styled-components";
-import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
 const Button = styled.button`
@@ -63,19 +61,16 @@ const ItemView = ({items, updateItemState}) => {
   }
 
   return (
-    <div>
+    <div className='grid'>
         {
         item && (<>
         <h1>{item.name}</h1>
-        <img src={item.images} alt={item.description} />
-        <p>{item.description}</p>
-
-       
-
-        <Link to={`/item/edit/${item._id}`} > Edit Item </Link>
+        <img id='imgDetail' src={item.images} alt={item.description} />
+        <p id='plantDes'>{item.description}</p>
+        <button id='editButt'><Link to={`/item/edit/${item._id}`} > Edit Item </Link></button>
         <>
-        <div>
-      <button onClick={openModal}>Delete</button>
+        <div className='grid'>
+      <button id='deleteButt' onClick={openModal}>Delete</button>
       <Modal
         ariaHideApp={false}
         isOpen={modalIsOpen}

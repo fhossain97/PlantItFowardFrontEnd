@@ -1,6 +1,6 @@
 import Items from '../components/Item/Items';
 import {Link} from 'react-router-dom'
-import Logo5 from '../assets/images/Logo5.png';
+import Logo7 from '../assets/images/Logo7.png';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -28,7 +28,7 @@ const Home = ({ items, updateItemState, user }) => {
               </Carousel.Item>)
             })}
           </Carousel>
-        </Row> 
+        </Row><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <Row id='bottom' className='fixed-bottom'>
           <Col className='d-grid my-auto justify-content-center'>
             <Row className='p-5 '>
@@ -47,7 +47,7 @@ const Home = ({ items, updateItemState, user }) => {
             </Row>
           </Col>
           <Col>
-          <img id='logo' src={Logo5}  alt='logo'/>
+          <img id='logo' src={Logo7}  alt='logo'/>
           </Col>
         </Row>
       </Container>
