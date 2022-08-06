@@ -96,6 +96,7 @@ const Navbar = ({ user, handleLogout }) => {
           <Link to="/findflorist"> Find Florists </Link>
 
         </li>
+  
 
 
 
@@ -110,17 +111,16 @@ const Navbar = ({ user, handleLogout }) => {
         </Link>
       </p>
       </li>
-  
-      <li className="search">
-
-<SearchBar placeholder="Search for Plants..." data={items}/>
-
-      </li>
       
+      <li className="search">
+      
+          <SearchBar placeholder="Search for Plants..." data={items}/>
+      
+      </li>
 
     </ul>
   ) : (
- 
+    
     <ul>
     
  <li id="nav">
@@ -170,7 +170,7 @@ const Navbar = ({ user, handleLogout }) => {
 
 </ul>
   );
-
+  
 
   return (
   <nav>{nav}</nav>

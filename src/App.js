@@ -11,7 +11,7 @@ import SignupTest from "./pages/Signup";
 import bootstrap from "bootstrap";
 import FindFlorist from "./pages/FindFlorist.jsx";
 import Chat from "./pages/Chat"
-
+import SearchBar from "./components/SearchBar/SearchBar.jsx";
 import Signup from "./pages/Signup";
 
 function App() {
