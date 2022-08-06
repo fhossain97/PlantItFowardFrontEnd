@@ -37,7 +37,7 @@ input:focus {
 .searchIcon {
   height: 30px;
   width: 30px;
-  background-color: white;
+  background-color: transparent;
   display: grid;
   place-items: center;
 }
@@ -106,6 +106,11 @@ display: none;
   flex-direction: row;
   align-items: center;
 }
+
+.hideResults{
+  background-color: transparent;
+  border: transparent;
+}
 `;
 
 
@@ -161,7 +166,7 @@ function SearchBar({placeholder, data}) {
           
         </Dropdown.Toggle>
 
-        <Dropdown.Menu onClick={handleClick}>
+        <Dropdown.Menu onClick={handleClick} className="hideResults">
         {filteredData.length !== 0 && (
           
           <div className="dataResult">
