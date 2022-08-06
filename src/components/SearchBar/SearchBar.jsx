@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
-// import SearchIcon from '@mui/icons-material/Search';
-// import CloseIcon from '@mui/icons-material/Close';
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
+import SearchIcon from '@mui/icons-material/Search';
+import CloseIcon from '@mui/icons-material/Close';
 
-// https://www.youtube.com/watch?v=x7niho285qs&t=1900s
+//Video reference for search bar: https://www.youtube.com/watch?v=x7niho285qs&t=1900s
 
 const SearchBarContainer = styled.nav`
   .searchInputs {
@@ -26,10 +26,10 @@ const SearchBarContainer = styled.nav`
   font-size: 18px;
   padding: 15px;
   height: 30px;
-  width: 350px;
+  width: 500px;
 }
   
-input[type="text"]:focus {
+input:focus {
       background-color: #D0F0C0;
       color:black
     }
@@ -47,8 +47,9 @@ input[type="text"]:focus {
 } */
 
 .searchIcon svg {
-  font-size: 15px;
+  font-size: 30px;
   margin: 0px;
+  color: black;
 }
 
 .dataResult {
@@ -59,6 +60,8 @@ input[type="text"]:focus {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   overflow: hidden;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .dataResult::-webkit-scrollbar {
@@ -79,6 +82,8 @@ display: none;
 
 .link {
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
 }
 
 .link:hover {
@@ -90,7 +95,16 @@ display: none;
 }
 
 .dropdownColor {
+  box-shadow: none;
+  border: 1px transparent;
   background-color: transparent;
+  width: 250px;
+}
+
+.wholeInput{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 `;
 
@@ -105,39 +119,44 @@ function SearchBar({placeholder, data}) {
         const searchWord = e.target.value
         setWordEntered(searchWord)
         const newFilter= data.filter((value) =>{
-            return value.name.toLowerCase().includes(searchWord.toLowerCase())
+          return value.name.toLowerCase().includes(searchWord.toLowerCase())
         })
         if(searchWord === "") {
-            setFilteredData([])
+          setFilteredData([])
         }else{
-            setFilteredData(newFilter)
+          setFilteredData(newFilter)
+          console.log(newFilter)
         }
     }
 
     const clearInput = () => {
         setFilteredData([])
         setWordEntered("")
-        
     }
 
-    // https://bobbyhadz.com/blog/react-add-remove-class-on-click
+  //Reference for dropdown toggling: https://bobbyhadz.com/blog/react-add-remove-class-on-click
 
     const handleClick = (e) =>{
       e.currentTarget.classList.toggle('dropdownToggle')
     }
+
   return (
     
-    <SearchBarContainer className="search outline-none" >
+    <SearchBarContainer className="search outline-none dropdownColor" >
     <Dropdown  className="d-inline mx-2 dropdownColor" >
-        <Dropdown.Toggle variant='outline-success' id="dropdown-autoclose-true">
-          <div>
+        <Dropdown.Toggle id="dropdown-autoclose-true" className='dropdownColor'>
+          <div className='wholeInput'>
           <input type="text" 
              placeholder={placeholder} 
              value={wordEntered} 
              onChange={handleFilter} />
-             {/* <div className="searchIcon">
-                 {filteredData.length === 0 ? <SearchIcon /> : <CloseIcon id="clearBtn" onClick={clearInput} />}
-             </div> */}
+             <div className="searchIcon">
+          {filteredData.length === 0 ? (
+            <SearchIcon />
+          ) : (
+            <CloseIcon id="clearBtn" onClick={clearInput} />
+          )}
+        </div> 
          </div>
           
         </Dropdown.Toggle>
@@ -147,6 +166,7 @@ function SearchBar({placeholder, data}) {
           
           <div className="dataResult">
              {filteredData.map((item) =>{
+              //  console.log(item)
                  return (
                  <Link key={item._id} onClick={clearInput} to={`/item/${item._id}`  } > 
                  <p className="link">
