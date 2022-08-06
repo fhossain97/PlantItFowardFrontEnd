@@ -67,6 +67,9 @@ const ItemView = ({items, updateItemState}) => {
         <h1>{item.name}</h1>
         <img id='imgDetail' src={item.images} alt={item.description} />
         <p id='plantDes'>{item.description}</p>
+        <p>{item.status}</p>
+        <p>{item.quantity}</p>
+        <p>{item.genus}</p>
         <button id='editButt'><Link to={`/item/edit/${item._id}`} > Edit Item </Link></button>
         <>
         <div className='grid'>

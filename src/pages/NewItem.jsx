@@ -24,6 +24,10 @@ const NewItem = ({ addItem }) => {
     const images = new FormData();
     images.append("images", formData.images);
     images.append("name", formData.name);
+    images.append("quantity", formData.quantity);
+    images.append("description", formData.description);
+    images.append("genus", formData.genus);
+    images.append("status", formData.status);
     // images.append("file", formData.images);
     console.log(formData);
     axios.post(`${process.env.REACT_APP_PIF_API_URL}/item`, images).then((res) => {
