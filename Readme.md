@@ -54,6 +54,10 @@ As a user
   - I would like to leave reviews of plant exchanges (both sides leave an interaction review giving each a rating for future traders)
   - I should be able to see the location where the plant share is available 
 
+# Video Walkthrough
+<img src='/public/PIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 # Technologies Used
 React, HTML, CSS, JavaScript, Express, Node JS, JSON API, Mongoose, MongoDB, Axios,, MongoDB Atlas, react-bootstrap, chal,, react-dom, react-modal, react-router-dom, react scripts, Multer, Cloudinary, Github, Heroku
