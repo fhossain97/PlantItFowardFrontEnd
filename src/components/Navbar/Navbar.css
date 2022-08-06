@@ -16,7 +16,7 @@ ul{
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #fefdb8;
+    background-image: url('./images.jpg')
   }
 
   
@@ -29,7 +29,7 @@ ul{
     filter: grayscale(100%) opacity(1);
     transition: let(--transition-speed);
     display: inline-block;
-    margin-top: 2px
+    margin-right: 40px;
   }
   
   #nav:hover {
@@ -50,21 +50,23 @@ ul{
     text-align: center;
     color: black;
     background: #71BC78;
-    font-size: 15px;
+    font-size: 16px;
     width: 120px;
     height: 80px;
-    border-radius: 12px 300px 5px 300px;
-    margin-right: 40px;
+    border-radius: 12px 250px 5px 250px;
+    margin-right: 5px;
 
-justify-items: center;
-background-image: url('./leaf.jpg')
+justify-content: center;
+background-image: url('./leaf.jpg');
+
  
   }
-  
+
 
   li svg:hover{
     animation: spin 2s linear infinite;
   }
+
 
   
 @keyframes spin {
@@ -74,17 +76,15 @@ background-image: url('./leaf.jpg')
 
 .format{
   color: light gray !important;
-  padding-left: 120px;
+  padding-left: 80px;
   text-align: center;
   font-size: 28px;
 
 }
 
-
-
 .search {
   position:relative; 
-  left: 20px;
+  left: 2px;
  
 }
 h1 {
