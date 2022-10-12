@@ -8,11 +8,11 @@ import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
-import bootstrap from "bootstrap";
+// import bootstrap from "bootstrap";
 import FindFlorist from "./pages/FindFlorist.jsx";
 import Chat from "./pages/Chat"
-import SearchBar from "./components/SearchBar/SearchBar.jsx";
-import Signup from "./pages/Signup";
+// import SearchBar from "./components/SearchBar/SearchBar.jsx";
+// import Signup from "./pages/Signup";
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch(process.env.REACT_APP_PIF_API_URL)
+    fetch("http://localhost:8000/item/")
       .then(res => res.json())
       .then(items => setItems(items));
   }, []);
