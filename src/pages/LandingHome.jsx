@@ -1,6 +1,5 @@
 import Items from '../components/Item/Items';
 import {Link} from 'react-router-dom'
-import Logo7 from '../assets/images/Logo7.png';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -47,7 +46,6 @@ const Home = ({ items, updateItemState, user }) => {
             </Row>
           </Col>
           <Col>
-          <img id='logo' src={Logo7}  alt='logo'/>
           </Col>
         </Row>
       </Container>

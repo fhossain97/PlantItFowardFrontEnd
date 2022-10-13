@@ -8,8 +8,8 @@ const Cloudinary = () => {
     const data = new FormData();
     data.append("file", images);
     data.append("upload_preset", "plantitforward");
-    data.append("cloud_name", "mushu");
-    fetch("https://api.cloudinary.com/v1_1/mushu/image/upload/", {
+    data.append("cloud_name", "BLANK");
+    fetch("BLANK", {
       method: "post",
       body: data,
     })

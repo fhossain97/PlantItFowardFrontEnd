@@ -26,7 +26,7 @@ const customStyles = {
 const ItemView = ({items, updateItemState}) => {
     let navigate = useNavigate()
     const deleteItem = (id) => {
-    axios.delete(`${process.env.REACT_APP_PIF_API_URL}/item/${id}`).then((res) => {
+    axios.delete(`http://localhost:8000/item/${id}`).then((res) => {
       console.log(res);
       updateItemState(id);
       return navigate("/")
@@ -37,7 +37,7 @@ const ItemView = ({items, updateItemState}) => {
     const [item, setItem] = useState()
     
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_PIF_API_URL}/item/${id}`)
+        fetch(`http://localhost:8000/item/${id}`)
         .then(res => res.json())
         .then(data => setItem(data))
     }, [id])
@@ -66,10 +66,10 @@ const ItemView = ({items, updateItemState}) => {
         item && (<>
         <h1>{item.name}</h1>
         <img id='imgDetail' src={item.images} alt={item.description} />
-        <p id='plantDes'>{item.description}</p>
-        <p>{item.status}</p>
-        <p>{item.quantity}</p>
-        <p>{item.genus}</p>
+        <p id='plantDes'> Description: {item.description}</p>
+        <p>Genus: {item.genus}</p>
+        <p>Status: {item.status}</p>
+        <p>Quantity: {item.quantity}</p>
         <button id='editButt'><Link to={`/item/edit/${item._id}`} > Edit Item </Link></button>
         <>
         <div className='grid'>
