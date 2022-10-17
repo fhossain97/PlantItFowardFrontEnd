@@ -1,50 +1,32 @@
-import React, {useState, useEffect} from 'react'
-import { Link, useParams, useNavigate } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
-import styled from "styled-components";
-import Modal from 'react-modal';
+import Modal from "react-modal";
+import Card from "react-bootstrap/Card";
+import ListGroup from "react-bootstrap/ListGroup";
 
-const Button = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid palevioletred;
-  color: palevioletred;
-  margin: 0 1em;
-  padding: 0.25em 1em;
-`;
-const customStyles = {
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-  },
-};
-
-const ItemView = ({items, updateItemState}) => {
-    let navigate = useNavigate()
-    const deleteItem = (id) => {
+const ItemView = ({ items, updateItemState }) => {
+  let navigate = useNavigate();
+  const deleteItem = (id) => {
     axios.delete(`http://localhost:8000/item/${id}`).then((res) => {
       console.log(res);
       updateItemState(id);
-      return navigate("/")
+      return navigate("/");
     });
   };
-    let {id} = useParams()
+  let { id } = useParams();
 
-    const [item, setItem] = useState()
-    
-    useEffect(() => {
-        fetch(`http://localhost:8000/item/${id}`)
-        .then(res => res.json())
-        .then(data => setItem(data))
-    }, [id])
+  const [item, setItem] = useState();
 
-    //console.log(item)
+  useEffect(() => {
+    fetch(`http://localhost:8000/item/${id}`)
+      .then((res) => res.json())
+      .then((data) => setItem(data));
+  }, [id]);
 
-    let subtitle;
+  console.log(item)
+
+  let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   function openModal() {
@@ -52,8 +34,7 @@ const ItemView = ({items, updateItemState}) => {
   }
 
   function afterOpenModal() {
-    // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    subtitle.style.color = "#f00";
   }
 
   function closeModal() {
@@ -61,44 +42,51 @@ const ItemView = ({items, updateItemState}) => {
   }
 
   return (
-    <div className='grid'>
-        {
-        item && (<>
-        <h1>{item.name}</h1>
-        <img id='imgDetail' src={item.images} alt={item.description} />
-        <p id='plantDes'> Description: {item.description}</p>
-        <p>Genus: {item.genus}</p>
-        <p>Status: {item.status}</p>
-        <p>Quantity: {item.quantity}</p>
-        <button id='editButt'><Link to={`/item/edit/${item._id}`} > Edit Item </Link></button>
-        <>
-        <div className='grid'>
-      <button id='deleteButt' onClick={openModal}>Delete</button>
-      <Modal
-        ariaHideApp={false}
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
-      >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Are you sure you want to delete this item?</h2>
-        <button onClick={closeModal}>close</button>
-        <Button onClick={() => deleteItem(item._id)}>Delete</Button>
-      </Modal>
-    </div>
+  <Card style={{ width: "15rem" }}>
+      {item &&(<>
+          <Card.Img variant="top" src={item.images} alt={item.description} />
+          <Card.Body>
+            <Card.Title>{item.name}</Card.Title>
+            <Card.Text>{item.description}</Card.Text>
+          </Card.Body>
+          <ListGroup className="list-group-flush">
+            <ListGroup.Item> Genus: {item.genus}</ListGroup.Item>
+            <ListGroup.Item> Status: {item.status}</ListGroup.Item>
+            <ListGroup.Item> Quantity: {item.quantity}</ListGroup.Item>
+          </ListGroup>
 
-       
-       
-      </>
-        
-        </>)
-        }
-
+          <Card.Body>
             
             
-          </div>
-      )
+              
+            
+            <Link to={`/item/edit/${item._id}`} ><button class="inline-block px-6 py-2.5 bg-green-500 text-white font-large text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">Edit</button></Link>
+            
+            <button onClick={openModal} class="inline-block px-6 py-2.5 bg-red-500 text-white font-large text-xs leading-tight uppercase rounded-full shadow-md hover:bg-red-600 hover:shadow-lg focus:bg-red-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-red-700 active:shadow-lg transition duration-150 ease-in-out"
+              >Delete
+            </button>
+            <Modal
+              ariaHideApp={false}
+              isOpen={modalIsOpen}
+              onAfterOpen={afterOpenModal}
+              onRequestClose={closeModal}
+              contentLabel="Example Modal"
+            >
+              <h2 ref={(_subtitle) => (subtitle = _subtitle)}>
+                Delete {item.name}?{" "}
+              </h2>
+              <button onClick={closeModal} class="inline-block px-6 py-2.5 bg-green-500 text-white font-large text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out">Close</button>
+              <button class="inline-block px-6 py-2.5 bg-green-500 text-white font-large text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out" onClick={() => deleteItem(item._id)}>Delete</button>
+            </Modal>
+          </Card.Body>
+      
+        </>
+        )
     }
+      </Card>
 
-export default ItemView
+
+    );
+  };
+
+export default ItemView;

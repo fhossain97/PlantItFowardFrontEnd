@@ -38,7 +38,6 @@ const NewItem = ({ addItem }) => {
   const handleFile = (e) => {
     console.log(e.target);
     setFormData({ ...formData, [e.target.id]: e.target.files[0] });
-
   };
 
   return (
@@ -103,7 +102,6 @@ const NewItem = ({ addItem }) => {
             />
           </div>
 
-
           <div className="mt-1 flex justify-center rounded-md border-2 border-dashed border-black-300 px-6 pt-5 pb-6">
             <div className="space-y-1 text-center">
               <svg
@@ -127,21 +125,16 @@ const NewItem = ({ addItem }) => {
                   htmlFor="images"
                   className="relative cursor-pointer rounded-md bg-white font-large text-green-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-green-500 focus-within:ring-offset-2 hover:text-green-500"
                 >
-                  
                   <input
                     name="images"
-                  
-             
+                    id="images"
                     accept="image/png, image/jpeg, image/jpg"
-          
-                    onChange={handleFile}
-                    class="block mb-5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" 
-                    id="default_size" 
                     type="file"
+                    onChange={handleFile}
+                    class="block mb-5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 cursor-pointer dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+                    // id="default_size"
                     
                   />
-                    
-
                 </label>
               </div>
             </div>
