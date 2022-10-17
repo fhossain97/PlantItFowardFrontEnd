@@ -1,66 +1,69 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie Flower');
-
-body {
-    font-family: Indie Flower; 
-    /* background-image: url('./11.jpg'); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    background-image: linear-gradient(#fffdd0, #fdfd96, #01796F, #006241);
+.container-box {
+  background: linear-gradient(#fffdd0, #fdfd96, #01796f);
+  padding: 80px 0;
+}
+.container-box .image-holder {
+  display: table-cell;
+  width: auto;
+  background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQH2ErUQgoQ9RF4B3Vb1hELofNesyK9kLmGWTrEahKAI-_jvmcVqMd8rTH4XuS37mkj4I&usqp=CAU);
+  background-size: no-repeat;
+  image-rendering: auto;
+}
+.container-box .form-container {
+  display: table;
+  max-width: 900px;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+}
+.container-box form {
+  display: table-cell;
+  width: 400px;
+  background-color: #ffffff;
+  padding: 40px 60px;
+  color: #505e6c;
+}
+@media (max-width: 991px) {
+  .container-box form {
+    padding: 40px;
+  }
+}
+.container-box form h2 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+.container-box form .form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid lightgreen;
+  padding: 0px 75px;
+  border-radius: 0;
+  box-shadow: none;
+  outline: none;
+  color: inherit;
+  text-indent: 0px;
+  height: 50px;
+}
+.container-box form .form-check {
+  font-size: 13px;
+  line-height: 20px;
+}
+.container-box form .btn-primary {
+  background: green;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  box-shadow: none;
+  margin-top: 35px;
+  text-shadow: none;
+  outline: none !important;
+}
+.container-box form .btn-primary:hover,
+.container-box form .btn-primary:active {
+  background: green;
+}
+.container-box form .btn-primary:active {
+  transform: translateY(1px);
 }
 
-h1{
-    font-size: 40px;
-    text-align: center;
-    color:#004526;
-font-weight: bolder;
-padding: 20px;
-  }
-  
-  
-input[type="text"] {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 8px 0;
-      box-sizing: border-box;
-      border: 1px solid #555;
-      outline: none;
-    }
-  
-input[type="text"]:focus {
-      background-color: #D0F0C0;
-    }
-  
-  
- button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 20px;
-      cursor: pointer;
-      text-align: center;
-      text-decoration: none;
-      color: black;
-      outline: none;
-      border: none;
-      border-radius: 15px;
-      box-shadow: 0px 0px 4px 4px rgb(0,0,0);
-
-    }
-
-    #new {
-        background-color: #ffc40c;
-    }
-  
-    #new:hover {
-      background: #D0F0C0;
-    }
-  
-    .button {
-        text-align: center;
-    }
-
-    label {
-        font-size: 20px;
-        color:#004526;
-        font-weight: bolder;
-        background-color: #ffc40c;
-    }
