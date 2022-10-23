@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+.view {
+    background: linear-gradient(#fffdd0, #fdfd96, #01796f);
+}
+
 #login, #signup {
     border: none;
     background-color: #c57a53;
@@ -24,13 +29,14 @@
     margin: auto
 }
 
-#rope {
+#vine {
     margin: auto;
-    height: 100px
+    height: 14rem;
 }
 
 #cardCont {
     width: 18rem;
+    flex-wrap: wrap;
 }
 
 #cardImg {
@@ -38,15 +44,10 @@
 }
 
 #cardBody {
-    height: 150px;
+    height: 5rem;
     text-align: center;
     background-color: #74b7a0;
-    color: #8c573c;
-}
-
-#cardButton {
-    color: #c57a53;
-    border-color: #c57a53
+    color: black;
 }
 
 #imgDetail {
@@ -56,12 +57,7 @@
     border-radius: 25px;
 }
 
-#plantDes, p {
+#plantDes, ListGroup.Item {
     text-align: center;
     font-size: 40px;
-}
-
-#editButt, #deleteButt{
-    width: 25vw;
-    margin: auto;
 }
