@@ -18,7 +18,7 @@ const Items = ({ items, updateItemState, user }) => {
     <Container>
       <Row>
       {items.length === 0
-        ? "Sorry! No plants available to trade at this time."
+        ? "No plants available to trade."
         : items.map((item) => {
             return (
                 <Col>

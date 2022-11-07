@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 
-.view {
+body {
     background: linear-gradient(#fffdd0, #fdfd96, #01796f);
+
 }
 
 #login, #signup {
@@ -31,12 +32,14 @@
 
 #vine {
     margin: auto;
-    height: 14rem;
+    height: 14rem
 }
 
 #cardCont {
     width: 18rem;
+    display:flex;
     flex-wrap: wrap;
+    flex-direction: row; 
 }
 
 #cardImg {
@@ -57,7 +60,3 @@
     border-radius: 25px;
 }
 
-#plantDes, ListGroup.Item {
-    text-align: center;
-    font-size: 40px;
-}
