@@ -5,22 +5,18 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
 
-//Video reference for search bar: https://www.youtube.com/watch?v=x7niho285qs&t=1900s
-
 const SearchBarContainer = styled.nav`
   .searchInputs {
     display: flex;
     justify-content: center;
   }
-
   .dropdownToggle{
     display: none;
   }
-
   .search input {
   background-color: white;
   border: 0;
-  border-radius: 2px;
+  border-radius: 10px;
   border-top-right-radius: 0px;
   border-bottom-right-radius: 0px;
   font-size: 18px;
@@ -33,27 +29,22 @@ input:focus {
       background-color: #D0F0C0;
       color:black
     }
-
 .searchIcon {
-  height: 30px;
-  width: 30px;
+  height: 32px;
+  width: 32px;
   background-color: transparent;
   display: grid;
   place-items: center;
 }
 
-/* input:focus {
-  outline: none;
-} */
 
 .searchIcon svg {
   font-size: 30px;
   margin: 0px;
   color: black;
 }
-
 .dataResult {
-  margin-top: 5px;
+  /* margin-top: 5px; */
   width: 300px;
   height: 80px;
   background-color: white;
@@ -63,11 +54,9 @@ input:focus {
   display: flex;
   flex-direction: column;
 }
-
 .dataResult::-webkit-scrollbar {
 display: none;
 }
-
 .dataResult .dataItem {
   width: 100%;
   height: 50px;
@@ -75,38 +64,32 @@ display: none;
   align-items: center;
   color: black;
 }
-
 .dataItem p {
   margin-left: 10px;
 }
-
 .link {
   text-decoration: none;
   display: flex;
   flex-direction: column;
 }
-
 .link:hover {
   background-color: lightgray;
 }
-
 #clearBtn {
   cursor: pointer;
 }
-
 .dropdownColor {
   box-shadow: none;
-  border: 1px transparent;
+  border: transparent;
   background-color: transparent;
-  width: 250px;
+  width: 230px;
 }
-
 .wholeInput{
   display: flex;
   flex-direction: row;
   align-items: center;
+  border-radius: 50px;
 }
-
 .hideResults{
   background-color: transparent;
   border: transparent;
@@ -115,40 +98,42 @@ display: none;
 
 
 
-function SearchBar({placeholder, data}) {
+const SearchBar = ({placeholder, data}) => {
 
-    const [filteredData, setFilteredData] = useState([])
-    const [wordEntered, setWordEntered] = useState("")
+  const [filteredData, setFilteredData] = useState([])
+  const [wordEntered, setWordEntered] = useState("")
 
-    const handleFilter = (e) => {
-        const searchWord = e.target.value
-        setWordEntered(searchWord)
-        const newFilter= data.filter((value) =>{
-          return value.name.toLowerCase().includes(searchWord.toLowerCase())
-        })
-        if(searchWord === "") {
-          setFilteredData([])
-        }else{
-          setFilteredData(newFilter)
-          console.log(newFilter)
-        }
-    }
-
-    const clearInput = () => {
+  const handleFilter = (e) => {
+      const searchWord = e.target.value
+      setWordEntered(searchWord)
+      const newFilter= data.filter((value) =>{
+        return value.name.toLowerCase().includes(searchWord.toLowerCase())
+      })
+      if(searchWord === "") {
         setFilteredData([])
-        setWordEntered("")
-    }
+      }else{
+        setFilteredData(newFilter)
+        console.log(newFilter)
+      }
+  }
 
-  //Reference for dropdown toggling: https://bobbyhadz.com/blog/react-add-remove-class-on-click
+  const clearInput = () => {
+      setFilteredData([])
+      setWordEntered("")
+  }
 
-    const handleClick = (e) =>{
-      e.currentTarget.classList.toggle('dropdownToggle')
-    }
+//Reference for dropdown toggling: https://bobbyhadz.com/blog/react-add-remove-class-on-click
+
+  const handleClick = (e) =>{
+    e.currentTarget.classList.toggle('dropdownToggle')
+  }
+
 
   return (
-    
-    <SearchBarContainer className="search outline-none dropdownColor" >
-    <Dropdown  className="d-inline mx-2 dropdownColor" >
+    <div>
+
+<SearchBarContainer className="search outline-none dropdownColor" >
+    <Dropdown  >
         <Dropdown.Toggle id="dropdown-autoclose-true" className='dropdownColor'>
           <div className='wholeInput'>
           <input type="text" 
@@ -185,8 +170,12 @@ function SearchBar({placeholder, data}) {
         </Dropdown.Menu>
       </Dropdown>
     </SearchBarContainer>
-    
+
+    </div>
   )
 }
 
 export default SearchBar
+
+
+

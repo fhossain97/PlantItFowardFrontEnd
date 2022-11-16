@@ -1,6 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie Flower');
 
-body {
+svg {
+  width: 32px;
+  height: 32px;
+  display: flex
+}
+
+Navbar.Brand {
+  color: white;
+}
+
+
+/* body {
     font-family: Indie Flower; 
     color: black;
     font-size: 16px;
@@ -103,4 +114,4 @@ h1 {
   to {
     text-shadow: 0 0 20px darkgreen;
   }
-}
+} */

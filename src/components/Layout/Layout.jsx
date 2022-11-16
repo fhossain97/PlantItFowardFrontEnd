@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../Navbar/Navbar";
+import NavbarTop from "../Navbar/NavbarTop";
 
 const Layout = ({ user, children, setUser, handleLogout}) => {
   //console.log(children);
   return (
     <div>
-      <Navbar user={user} setUser={setUser} handleLogout={handleLogout}/>
+      <NavbarTop user={user} setUser={setUser} handleLogout={handleLogout}/>
       {children}
     </div>
   );
