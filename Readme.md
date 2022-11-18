@@ -46,8 +46,8 @@ As a user:
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 # Technologies Used
-Front-end: React.js,JSON API, Axios, React-Bootstrap, Tailwind CSS
-Back-end: Mongoose, MongoDB, MongoDB Atlas, Express.js, Cloudinary, Multer
+- Front-end: React.js,JSON API, Axios, React-Bootstrap, Tailwind CSS
+- Back-end: Mongoose, MongoDB, MongoDB Atlas, Express.js, Cloudinary, Multer
 
 
 

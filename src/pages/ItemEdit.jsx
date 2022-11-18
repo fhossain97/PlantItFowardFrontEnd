@@ -18,7 +18,7 @@ const ItemEdit = ({ setItems }) => {
   const [formData, setFormData] = useState(initialState);
 
   const handleChange = (e) => {
-    //console.log(e.target);
+    console.log(e.target);
     setFormData({ ...formData, [e.target.id]: e.target.value });
   };
 
@@ -27,6 +27,10 @@ const ItemEdit = ({ setItems }) => {
     const images = new FormData();
     images.append("images", formData.images);
     images.append("name", formData.name);
+    images.append("genus", formData.genus);
+    images.append("quantity", formData.quantity);
+    images.append("description", formData.description);
+    images.append("status", formData.status);
     //console.log(formData)
     e.preventDefault();
     //console.log(formData);
@@ -62,8 +66,8 @@ const ItemEdit = ({ setItems }) => {
               placeholder="Name"
               name="name"
               type="text"
-              onChange={handleChange}
               value={formData.name}
+              onChange={handleChange}
             />
           </div>
 
@@ -71,16 +75,18 @@ const ItemEdit = ({ setItems }) => {
             <input
               class="form-control"
               id="quantity"
-              name="quantity"
-              type="text"
               placeholder="Quantity"
-              onChange={handleChange}
+              name="quantity"
+            
+              type="text"
               value={formData.quantity}
+              onChange={handleChange}
             />
           </div>
 
           <div class="form-group">
             <input
+         
               class="form-control"
               id="description"
               placeholder="Description"
@@ -93,25 +99,29 @@ const ItemEdit = ({ setItems }) => {
 
           <div class="form-group">
             <input
+            htmlFor='Genus'
               class="form-control"
               id="genus"
               name="genus"
               placeholder="Genus"
               type="text"
-              onChange={handleChange}
+             
               value={formData.genus}
+              onChange={handleChange}
             />
           </div>
 
           <div class="form-group">
             <input
+            htmlFor='status'
               id="status"
               placeholder="Status"
               name="status"
               type="text"
-              onChange={handleChange}
+             
               class="form-control"
               value={formData.status}
+              onChange={handleChange}
             />
           </div>
 

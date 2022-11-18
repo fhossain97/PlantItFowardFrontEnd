@@ -1,10 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie Flower');
 
-svg {
-  width: 40px;
-  height: 40px;
-
-}
 
 .page-wrapper {
   width: 100%;
@@ -58,7 +53,7 @@ svg {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  justify-self: end;
+  justify-self: center;
 
   
 }
