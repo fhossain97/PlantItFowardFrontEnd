@@ -1,8 +1,8 @@
 # Plant It Forward
 
 # GH Links
-Frontend: https://github.com/fhossain97/PlantItFowardFrontEnd
-Backend: https://github.com/fhossain97/PlantItForwardBackend
+- Frontend: https://github.com/fhossain97/PlantItFowardFrontEnd
+- Backend: https://github.com/fhossain97/PlantItForwardBackend
 
 ### Deployment Links
 Coming Soon!
@@ -41,7 +41,7 @@ As a user:
 - I want to be able to drop pins on the map that save locations of florists nearby
 
 # Video Walkthrough
-<img src='./images/PIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./public/PIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
