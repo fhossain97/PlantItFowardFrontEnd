@@ -1,117 +1,121 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie Flower');
 
 svg {
-  width: 32px;
-  height: 32px;
-  display: flex
+  width: 40px;
+  height: 40px;
+
 }
 
-Navbar.Brand {
-  color: white;
+.page-wrapper {
+  width: 100%;
+  height: auto;
 }
 
-
-/* body {
-    font-family: Indie Flower; 
-    color: black;
-    font-size: 16px;
-    --transition-speed: 600ms;
- 
-    
+.nav-wrapper {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  background-color: beige;
 }
 
-  
-ul{
-    list-style: none;
-    padding: 10px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-image: url('./images.jpg')
-  }
-
-  
-  a {
-    display: flex;
-    align-items: center;
-    height: 2rem;
-    color: black;
-    text-decoration: none;
-    filter: grayscale(100%) opacity(1);
-    transition: let(--transition-speed);
-    display: inline-block;
-    margin-right: 40px;
-  }
-  
-  #nav:hover {
-    filter: grayscale(0%) opacity(1);
-    background: #D0F0C0;
-    color: #fffacd;
-  }
-
-  
-  a svg {
-    width: 1rem;
-    min-width: 2rem;
-    margin: 0 rem;
-  }
-  
-  
-#nav{
-    text-align: center;
-    color: black;
-    background: #71BC78;
-    font-size: 16px;
-    width: 120px;
-    height: 80px;
-    border-radius: 12px 250px 5px 250px;
-    margin-right: 5px;
-
-justify-content: center;
-background-image: url('./leaf.jpg');
-
- 
-  }
+.grad-bar {
+  width: 100%;
+  height: 15px;
+  background: linear-gradient(-45deg, rgba(7,63,24,1) 0%, rgba(99,182,34,1) 27%, rgba(246,243,114,1) 59%, rgba(185,241,203,1) 84%);
+  background-size: 400% 400%;
+  	-webkit-animation: gradbar 15s ease infinite;
+	-moz-animation: gradbar 15s ease infinite;
+	animation: gradbar 15s ease infinite;
+} 
 
 
-  li svg:hover{
-    animation: spin 2s linear infinite;
-  }
-
-
-  
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% {  transform: rotate(359deg); }
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr 3fr; 
+  align-items: center;
+  height: 7rem;
+  overflow: hidden;
 }
 
-.format{
-  color: light gray !important;
-  padding-left: 80px;
+.title {
+  justify-self: start;
+  margin-left: 20px;
+  font-size: 70px;
+  font-weight: 600;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW3ix2NzkDNtUnwDrMhpBto5aAOhZuur2lrQ&usqp=CAU);
+  background-size: 250px;
+  background-repeat: repeat;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.navbar ul {
+  float:left;
+  padding:10px;
   text-align: center;
-  font-size: 28px;
+  margin-left:20px;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  justify-self: end;
 
+  
 }
 
-.search {
-  position:relative; 
-  left: 2px;
- 
-}
-h1 {
-  animation: glow 8s ease-in-out infinite;
-  font-size: 80px;
-  font-weight: lighter;
-  margin-bottom: 5px;
-  color: black;
-  padding-left: 80px;
+.nav-item a{
+  color: darkolivegreen;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none;
+  transition: color 0.3s ease-out;
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 10px gold;
-  }
-  to {
-    text-shadow: 0 0 20px darkgreen;
-  }
-} */
+.nav-item a:hover {
+  color: lightseagreen;
+} 
+
+
+
+
+
+
+
+
+@-webkit-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+} 
+
+@-moz-keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+} 
+
+@keyframes gradbar {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
+
+/* codepen used for styling - https://codepen.io/bowersrd/pen/dwXLba?editors=1100 */

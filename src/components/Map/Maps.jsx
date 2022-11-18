@@ -19,7 +19,7 @@ function Maps({ lat, lng }) {
       lat: centers.lat,
       lng: centers.lng,
     });
-  }, []);
+  });
 
   const [search, setSearch] = useState(null);
 

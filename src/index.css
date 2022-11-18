@@ -4,15 +4,20 @@
 
 
 body {
-    background: linear-gradient(#fffdd0, #fdfd96, #01796f);
+    background-image: linear-gradient(#fdfd96, #01796f);
 
 }
 
 #login, #signup {
     border: none;
-    background-color: #c57a53;
-    color: #f4e9d1;
+
+margin-right: 10px;
     width: 25vw;
+   
+}
+
+#logsigdiv {
+    text-align: center;
 }
 
 #plantCarousel {
@@ -36,7 +41,7 @@ body {
 }
 
 #cardCont {
-    width: 18rem;
+    width: 300px;
     display:flex;
     flex-wrap: wrap;
     flex-direction: row; 
@@ -44,6 +49,7 @@ body {
 
 #cardImg {
     height: 300px;
+    width: 300px;
 }
 
 #cardBody {

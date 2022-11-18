@@ -2,8 +2,9 @@ import React, {useState} from 'react'
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 import Dropdown from 'react-bootstrap/Dropdown';
-import SearchIcon from '@mui/icons-material/Search';
 import CloseIcon from '@mui/icons-material/Close';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
 
 const SearchBarContainer = styled.nav`
   .searchInputs {
@@ -29,20 +30,6 @@ input:focus {
       background-color: #D0F0C0;
       color:black
     }
-.searchIcon {
-  height: 32px;
-  width: 32px;
-  background-color: transparent;
-  display: grid;
-  place-items: center;
-}
-
-
-.searchIcon svg {
-  font-size: 30px;
-  margin: 0px;
-  color: black;
-}
 .dataResult {
   /* margin-top: 5px; */
   width: 300px;
@@ -130,24 +117,29 @@ const SearchBar = ({placeholder, data}) => {
 
 
   return (
-    <div>
 
-<SearchBarContainer className="search outline-none dropdownColor" >
+
+
+<SearchBarContainer className="d-flex" >
     <Dropdown  >
         <Dropdown.Toggle id="dropdown-autoclose-true" className='dropdownColor'>
-          <div className='wholeInput'>
-          <input type="text" 
-             placeholder={placeholder} 
+        <Form className="d-flex">
+                  <Form.Control
+                    type="text"
+        placeholder={placeholder} 
              value={wordEntered} 
-             onChange={handleFilter} />
-             <div className="searchIcon">
+             onChange={handleFilter}
+                  />
+                  
+      <div className="searchIcon">
           {filteredData.length === 0 ? (
-            <SearchIcon />
+            <Button variant="outline-success">Search</Button>
           ) : (
             <CloseIcon id="clearBtn" onClick={clearInput} />
           )}
         </div> 
-         </div>
+                  
+                </Form>
           
         </Dropdown.Toggle>
 
@@ -171,7 +163,7 @@ const SearchBar = ({placeholder, data}) => {
       </Dropdown>
     </SearchBarContainer>
 
-    </div>
+
   )
 }
 

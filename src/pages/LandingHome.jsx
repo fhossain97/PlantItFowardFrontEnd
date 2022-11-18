@@ -27,26 +27,37 @@ const Home = ({ items, updateItemState, user }) => {
               </Carousel.Item>)
             })}
           </Carousel>
-        </Row><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+        {/* </Row><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
         <Row id='bottom' className='fixed-bottom'>
-          <Col className='d-grid my-auto justify-content-center'>
-            <Row className='p-5 '>
+          <Col className='d-grid my-auto justify-content-center'> */}
+         
+     
+
+            <div className="bg-black-50 px-4 py-3 text-right sm:px-6" id='logsigdiv'>
             <Link to='/login'>
-                <Button id='login'>
-                  Login
-                </Button>
-              </Link>
-            </Row>
-            <Row className='p-5 '>
-              <Link to='/signup'>
-                <Button id='signup'>
-                  Sign Up
-                </Button>
-              </Link>
-            </Row>
-          </Col>
+            <button
+id='login'
+              class="inline-block px-6 py-2.5 bg-green-500 text-white font-large text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+            >
+             Login
+            </button>
+            </Link>
+            <Link to='/signup'>
+            <button
+            id='signup'
+
+              class="inline-block px-6 py-2.5 bg-green-500 text-white font-large text-xs leading-tight uppercase rounded-full shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+            >
+             Sign-up
+            </button>
+            </Link>
+          </div>
+
+
+
+          {/* </Col>
           <Col>
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     )

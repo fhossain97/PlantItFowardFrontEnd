@@ -21,7 +21,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8000/item/")
+    fetch("http://localhost:8000/")
       .then(res => res.json())
       .then(items => setItems(items));
   }, []);
