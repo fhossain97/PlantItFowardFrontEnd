@@ -37,10 +37,10 @@ const NavbarTop = ({ user, handleLogout }) => {
   }, []);
 
   let nav = user ? (
-    <div class="page-wrapper">
-      <div class="nav-wrapper">
-        <div class="grad-bar"></div>
-        <nav class="navbar">
+    <div className="page-wrapper">
+      <div className="nav-wrapper">
+        <div className="grad-bar"></div>
+        <nav className="navbar">
 
         {/* <div style={{imageStyle}}>
   <iframe loading="lazy" style={{frameStyle}} title='frame'
@@ -51,32 +51,32 @@ const NavbarTop = ({ user, handleLogout }) => {
 
 <h1 className="title">Plant It Forward</h1>
 
-          <ul class="nav">
-            <li class="nav-item">
+          <ul className="nav">
+            <li className="nav-item">
               <Link style={{textDecoration: 'none'}} to="/"> 
                Home
               </Link>
           
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link style={{textDecoration: 'none'}} to="/new-item">
                 + Plant
               
               </Link>
         
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               <Link style={{textDecoration: 'none'}} to="/chat">
                Chat
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               {" "}
               <Link style={{textDecoration: 'none'}} to="/findflorist">
                 Map
               </Link>
             </li>
-            <li class="nav-item">
+            <li className="nav-item">
               {" "}
              
               <Link to="" style={{textDecoration: 'none'}} onClick={handleLogout}>
@@ -87,26 +87,26 @@ const NavbarTop = ({ user, handleLogout }) => {
             <SearchBar data={items} />
           </ul>
         </nav>
-        <div class="grad-bar"></div>
+        <div className="grad-bar"></div>
       </div>
     </div>
   ) : (
-    <div class="page-wrapper">
-      <div class="nav-wrapper">
-        <div class="grad-bar"></div>
-        <nav class="navbar">
-        <ul class="nav">
-          <li class="nav-item">
+    <div className="page-wrapper">
+      <div className="nav-wrapper">
+        <div className="grad-bar"></div>
+        <nav className="navbar">
+        <ul className="nav">
+          <li className="nav-item">
             <Link to="/login" style={{textDecoration: 'none'}}> Login
              
             </Link>
           </li>
-          <li class="nav-item">
+          <li className="nav-item">
           <Link to="/signup" style={{textDecoration: 'none'}}> Signup </Link>
           </li>
           </ul>
         </nav>
-        <div class="grad-bar"></div>
+        <div className="grad-bar"></div>
       </div>
     </div>
   );

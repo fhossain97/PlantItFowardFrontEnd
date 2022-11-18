@@ -8,11 +8,10 @@ import ItemView from "./pages/ItemView";
 import userService from "./utils/userService";
 import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
-// import bootstrap from "bootstrap";
 import FindFlorist from "./pages/FindFlorist.jsx";
 import Chat from "./pages/Chat"
-// import SearchBar from "./components/SearchBar/SearchBar.jsx";
-// import Signup from "./pages/Signup";
+
+
 
 function App() {
 
@@ -21,7 +20,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch("http://localhost:8000/")
+    fetch("http://localhost:8000/item/")
       .then(res => res.json())
       .then(items => setItems(items));
   }, []);
@@ -49,7 +48,6 @@ function App() {
   return (
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
-      {/* <SearchBar placeholder="Search for Plants..." data={items}/> */}
       <Routes>
        <Route
           path="/"

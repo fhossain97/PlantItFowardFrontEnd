@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import "../components/FormStyle/Form.css";
+
 
 const NewItem = ({ addItem }) => {
   const initialState = {

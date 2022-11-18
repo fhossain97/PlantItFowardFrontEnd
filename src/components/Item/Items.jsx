@@ -6,10 +6,10 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 
+
 const Items = ({ items, updateItemState, user }) => {
   const deleteItem = (id) => {
     axios.delete(`http://localhost:8000/item/${id}`).then((res) => {
-      //console.log(res);
       updateItemState(id);
     });
   };
@@ -23,6 +23,7 @@ const Items = ({ items, updateItemState, user }) => {
             return (
                 <Col>
                   <Item
+
                     key={item._id}
                     item={item}
                     deleteItem={deleteItem}
