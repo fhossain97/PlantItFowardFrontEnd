@@ -17,13 +17,13 @@ Plant It Forward is a fun take on an e-commerce website without the $$$. Users a
 
 
 # App Details  
-Homepage with Login and Sign-up
-Search Bar
-Plant Item Create and Edit
-Delete Modal
-Navigation Bar
-Google Maps API
-Chat Feature
+- Homepage with Login and Sign-up
+- Search Bar
+- Plant Item Create and Edit
+- Delete Modal
+- Navigation Bar
+- Google Maps API
+- Chat Feature
 
 # MVP 
 As a user:
@@ -41,7 +41,7 @@ As a user:
 - I want to be able to drop pins on the map that save locations of florists nearby
 
 # Video Walkthrough
-<img src='./public/PIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='./images/PIF.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
