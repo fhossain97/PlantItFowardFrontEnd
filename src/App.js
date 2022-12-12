@@ -19,7 +19,7 @@ function App() {
   const [user, setUser] = useState({});
 
 useEffect(() =>
-fetch(process.env.REACT_APP_PIF_API_URL)
+fetch(`${process.env.REACT_APP_PIF_API_URL}/signup`)
 )
 
 
