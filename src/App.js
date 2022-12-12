@@ -50,6 +50,9 @@ function App() {
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
+      <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
+      <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
+       
        <Route
           path="/"
           element={
@@ -62,8 +65,7 @@ function App() {
           element={<ItemEdit setItems={setItems} />}
         />
         <Route path="/item/:id" element={<ItemView updateItemState={updateItemState} items={items} />} />
-        <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
-        <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
+        
       <Route path="/findflorist" element={<FindFlorist />}/>
       <Route path="/chat" element={<Chat />} />
       </Routes>
