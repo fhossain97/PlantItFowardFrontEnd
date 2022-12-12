@@ -23,11 +23,11 @@ fetch(process.env.REACT_APP_PIF_API_URL)
 )
 
 
-  // useEffect(() => {
-  //   fetch(`process.env.REACT_APP_PIF_API_URL/item/`)
-  //     .then(res => res.json())
-  //     .then(items => setItems(items));
-  // }, []);
+  useEffect(() => {
+    fetch(`process.env.REACT_APP_PIF_API_URL/item/`)
+      .then(res => res.json())
+      .then(items => setItems(items));
+  }, []);
 
   const handleSignupOrLogin = () => {
       setUser(userService.getUser())
