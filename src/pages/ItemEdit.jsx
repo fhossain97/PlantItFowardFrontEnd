@@ -34,7 +34,7 @@ const ItemEdit = ({ setItems }) => {
     //console.log(formData)
     e.preventDefault();
     //console.log(formData);
-    axios.put(`http://localhost:8000/item/${id}`, images).then((res) => {
+    axios.put(`process.env.REACT_APP_PIF_API_URL/item/${id}`, images).then((res) => {
       setFormData(initialState);
       setItems(res.data);
       navigate("/", { replace: true });
@@ -42,7 +42,7 @@ const ItemEdit = ({ setItems }) => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/item/${id}`).then((res) => {
+    axios.get(`process.env.REACT_APP_PIF_API_URL/item/${id}`).then((res) => {
       setFormData(res.data);
     });
   }, [id]);

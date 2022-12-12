@@ -8,7 +8,7 @@ import Modal from "react-modal";
 const ItemView = ({ items, updateItemState }) => {
   let navigate = useNavigate();
   const deleteItem = (id) => {
-    axios.delete(`http://localhost:8000/item/${id}`).then((res) => {
+    axios.delete(`process.env.REACT_APP_PIF_API_URL/item/${id}`).then((res) => {
       console.log(res);
       updateItemState(id);
       return navigate("/");
@@ -19,7 +19,7 @@ const ItemView = ({ items, updateItemState }) => {
   const [item, setItem] = useState();
 
   useEffect(() => {
-    fetch(`http://localhost:8000/item/${id}`)
+    fetch(`process.env.REACT_APP_PIF_API_URL/item/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [id]);

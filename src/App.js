@@ -18,12 +18,16 @@ function App() {
   const [items, setItems] = useState([]);
   const [user, setUser] = useState({});
 
+useEffect(() =>
+fetch(process.env.REACT_APP_PIF_API_URL)
+)
 
-  useEffect(() => {
-    fetch("http://localhost:8000/item/")
-      .then(res => res.json())
-      .then(items => setItems(items));
-  }, []);
+
+  // useEffect(() => {
+  //   fetch(`process.env.REACT_APP_PIF_API_URL/item/`)
+  //     .then(res => res.json())
+  //     .then(items => setItems(items));
+  // }, []);
 
   const handleSignupOrLogin = () => {
       setUser(userService.getUser())

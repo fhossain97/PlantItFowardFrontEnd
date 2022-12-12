@@ -27,9 +27,7 @@ const Home = ({ items, updateItemState, user }) => {
               </Carousel.Item>)
             })}
           </Carousel>
-        {/* </Row><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <Row id='bottom' className='fixed-bottom'>
-          <Col className='d-grid my-auto justify-content-center'> */}
+
          
      
 
@@ -55,9 +53,7 @@ id='login'
 
 
 
-          {/* </Col>
-          <Col>
-          </Col> */}
+
         </Row>
       </Container>
     )

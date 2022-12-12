@@ -9,7 +9,7 @@ import Col from 'react-bootstrap/Col'
 
 const Items = ({ items, updateItemState, user }) => {
   const deleteItem = (id) => {
-    axios.delete(`http://localhost:8000/item/${id}`).then((res) => {
+    axios.delete(`process.env.REACT_APP_PIF_API_URL/item/${id}`).then((res) => {
       updateItemState(id);
     });
   };
