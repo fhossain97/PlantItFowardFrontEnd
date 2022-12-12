@@ -21,7 +21,7 @@ function App() {
 
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_PIF_API_URL}/signup/`)
+    fetch(`${process.env.REACT_APP_PIF_API_URL}/items/`)
       .then(res => res.json())
       .then(items => setItems(items));
   }, []);
