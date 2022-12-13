@@ -4,7 +4,10 @@ const BASE_URL = `${process.env.REACT_APP_PIF_API_URL}/user`;
 function signup(user) {
   return fetch(BASE_URL + '/signup', {
     method: 'POST',
-    headers: new Headers({'Content-Type': 'application/json'}),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'}),
     body: JSON.stringify(user)
   })
   .then(res => {
@@ -19,7 +22,10 @@ function signup(user) {
 function login(creds) {
   return fetch(BASE_URL + '/login', {
     method: 'POST',
-    headers: new Headers({'Content-Type': 'application/json'}),
+    headers: new Headers({
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin':'*',
+    'Access-Control-Allow-Methods':'POST,PATCH,OPTIONS'}),
     body: JSON.stringify(creds)
   })
   .then(res => {
