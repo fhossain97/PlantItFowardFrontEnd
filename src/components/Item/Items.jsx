@@ -14,7 +14,6 @@ const Items = ({ items, updateItemState, user }) => {
     });
   };
 
-  items = Array.from(items.items)
 
   return (
     <Container>
