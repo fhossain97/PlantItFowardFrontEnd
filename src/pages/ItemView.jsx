@@ -8,7 +8,7 @@ import Modal from "react-modal";
 const ItemView = ({ items, updateItemState }) => {
   let navigate = useNavigate();
   const deleteItem = (id) => {
-    axios.delete(`process.env.REACT_APP_PIF_API_URL/item/${id}`).then((res) => {
+    axios.delete(`${process.env.REACT_APP_PIF_API_URL}/item/${id}`).then((res) => {
       console.log(res);
       updateItemState(id);
       return navigate("/");
