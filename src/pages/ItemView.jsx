@@ -19,7 +19,7 @@ const ItemView = ({ items, updateItemState }) => {
   const [item, setItem] = useState();
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_PIF_API_URL}/item/${id}`)
+    fetch(`${process.env.REACT_APP_PIF_API_URL}/${id}`)
       .then((res) => res.json())
       .then((data) => setItem(data));
   }, [id]);

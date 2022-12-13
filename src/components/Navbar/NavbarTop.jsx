@@ -6,7 +6,7 @@ const NavbarTop = ({ user, handleLogout }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
+    fetch(`${process.env.REACT_APP_PIF_API_URL}/`)
       .then((res) => res.json())
       .then((items) => setItems(items));
   }, []);
