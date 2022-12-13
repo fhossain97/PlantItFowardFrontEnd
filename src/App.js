@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
-import LandingHome from "./pages/LandingHome.jsx";
+import Home from "./pages/LandingHome.jsx";
 import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
 import ItemEdit from "./pages/ItemEdit";
@@ -20,12 +20,10 @@ function App() {
 
 
 
-
-
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_PIF_API_URL}/signup/`)
-      // .then(res => res.json())
-      // .then(items => setItems(items));
+    fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
+      .then(res => res.json())
+      .then(items => setItems(items));
   }, []);
 
   const handleSignupOrLogin = () => {
@@ -58,7 +56,7 @@ function App() {
        <Route
           path="/"
           element={
-            <LandingHome items={items} updateItemState={updateItemState} user={user} />
+            <Home items={items} updateItemState={updateItemState} user={user} />
           }
         />
         <Route path="/new-item" element={<NewItem addItem={addItem} />} />
