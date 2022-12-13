@@ -20,10 +20,12 @@ function App() {
 
 
 
+
+
   useEffect(() => {
     fetch(`${process.env.REACT_APP_PIF_API_URL}/signup/`)
-      .then(res => res.json())
-      .then(items => setItems(items));
+      // .then(res => res.json())
+      // .then(items => setItems(items));
   }, []);
 
   const handleSignupOrLogin = () => {
