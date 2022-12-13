@@ -34,7 +34,7 @@ const ItemEdit = ({ setItems }) => {
     //console.log(formData)
     e.preventDefault();
     //console.log(formData);
-    axios.put(`process.env.REACT_APP_PIF_API_URL/item/${id}`, images).then((res) => {
+    axios.put(`${process.env.REACT_APP_PIF_API_URL}/item/${id}`, images).then((res) => {
       setFormData(initialState);
       setItems(res.data);
       navigate("/", { replace: true });
