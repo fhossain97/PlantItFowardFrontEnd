@@ -42,7 +42,7 @@ const ItemEdit = ({ setItems }) => {
   };
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_PIF_API_URL}/${id}`).then((res) => {
+    axios.get(`${process.env.REACT_APP_PIF_API_URL}/item/${id}`).then((res) => {
       setFormData(res.data);
     });
   }, [id]);
