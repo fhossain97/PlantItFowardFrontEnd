@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
+import '/Navbar.css'
 
 const NavbarTop = ({ user, handleLogout }) => {
   const [items, setItems] = useState([]);
