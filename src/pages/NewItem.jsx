@@ -28,7 +28,7 @@ const NewItem = ({ addItem }) => {
     images.append("genus", formData.genus);
     images.append("status", formData.status);
     console.log(formData);
-    axios.post(`${process.env.ClOUDINARY_URL}`, images).then((res) => {
+    axios.post(`${process.env.REACT_APP_ClOUDINARY_URL}`, images).then((res) => {
       setFormData(initialState);
       addItem(res.data);
       navigate(`${process.env.REACT_APP_PIF_API_URL}/item/`, { replace: true });
