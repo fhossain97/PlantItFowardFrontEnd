@@ -7,34 +7,18 @@ const NavbarTop = ({ user, handleLogout }) => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
+    fetch(`${process.env.REACT_APP_PIF_API_URL}/signup/`)
+      .then((res) => res.json())
+  }, []);
+
+  useEffect(() => {
     fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
       .then((res) => res.json())
       .then((items) => setItems(items));
   }, []);
 
   let nav = user ? (
-
     <div className="page-wrapper">
-    <div className="nav-wrapper">
-      <div className="grad-bar"></div>
-      <nav className="navbar">
-      <ul className="nav">
-        <li className="nav-item">
-          <Link to="/login" style={{textDecoration: 'none'}}> Login
-           
-          </Link>
-        </li>
-        <li className="nav-item">
-        <Link to="/signup" style={{textDecoration: 'none'}}> Signup </Link>
-        </li>
-        </ul>
-      </nav>
-      <div className="grad-bar"></div>
-    </div>
-  </div>
-    
-  ) : (
-<div className="page-wrapper">
       <div className="nav-wrapper">
         <div className="grad-bar"></div>
         <nav className="navbar">
@@ -82,6 +66,25 @@ const NavbarTop = ({ user, handleLogout }) => {
             </li>
 
             <SearchBar data={items} />
+          </ul>
+        </nav>
+        <div className="grad-bar"></div>
+      </div>
+    </div>
+  ) : (
+    <div className="page-wrapper">
+      <div className="nav-wrapper">
+        <div className="grad-bar"></div>
+        <nav className="navbar">
+        <ul className="nav">
+          <li className="nav-item">
+            <Link to="/login" style={{textDecoration: 'none'}}> Login
+             
+            </Link>
+          </li>
+          <li className="nav-item">
+          <Link to="/signup" style={{textDecoration: 'none'}}> Signup </Link>
+          </li>
           </ul>
         </nav>
         <div className="grad-bar"></div>
