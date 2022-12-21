@@ -33,7 +33,7 @@ const ItemEdit = ({ setItems }) => {
     images.append("status", formData.status);
     //console.log(formData)
     e.preventDefault();
-    //console.log(formData);
+    console.log(formData, 'this is the form data');
     axios.put(`${process.env.REACT_APP_PIF_API_URL}/item/${id}`, images).then((res) => {
       setFormData(initialState);
       setItems(res.data);

@@ -6,10 +6,6 @@ import './Navbar.css'
 const NavbarTop = ({ user, handleLogout }) => {
   const [items, setItems] = useState([]);
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_PIF_API_URL}/signup/`)
-      .then((res) => res.json())
-  }, []);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
