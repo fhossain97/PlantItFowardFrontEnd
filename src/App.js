@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Redirect } from "react-router-dom";
 import Home from "./pages/LandingHome.jsx";
 import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
@@ -50,6 +50,7 @@ function App() {
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
+        <Redirect from='/' to='/signup' />
       <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
       <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
        

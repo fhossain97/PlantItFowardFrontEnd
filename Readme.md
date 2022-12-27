@@ -5,7 +5,8 @@
 - Backend: https://github.com/fhossain97/PlantItForwardBackend
 
 ### Deployment Links
-Coming Soon!
+- Frontend: https://ornate-blini-8dd49b.netlify.app/
+- Backend: https://plant-it-forward.fly.dev/item
 
 # Description  
 Plant It Forward is a fun take on an e-commerce website without the $$$. Users are able to sign up, create new plants for trade, edit their plants, and so much more!
