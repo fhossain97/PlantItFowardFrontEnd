@@ -53,15 +53,16 @@ const handleLogout = () => {
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
-      <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
-      <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
-       
-       <Route
+      <Route
           path="/"
           element={
             <Home items={items} updateItemState={updateItemState} user={user} />
           }
         />
+      <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
+      <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
+       
+       
         <Route path="/new-item" element={<NewItem addItem={addItem} />} />
         <Route
           path="/item/edit/:id/"
