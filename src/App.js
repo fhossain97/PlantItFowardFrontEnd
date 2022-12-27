@@ -10,7 +10,7 @@ import LoginTest from "./pages/Login";
 import SignupTest from "./pages/Signup";
 import FindFlorist from "./pages/FindFlorist.jsx";
 import Chat from "./pages/Chat"
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 
 

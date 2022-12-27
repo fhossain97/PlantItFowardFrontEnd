@@ -1,6 +1,6 @@
 import Items from '../components/Item/Items';
 import {Link} from 'react-router-dom'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
