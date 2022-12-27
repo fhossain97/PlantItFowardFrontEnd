@@ -29,7 +29,6 @@ const NewItem = ({ addItem }) => {
     images.append("status", formData.status);
     console.log(formData);
 
-    console.log(process.env.REACT_APP_PIF_API_URL, 'env variable')
     axios.post(`${process.env.REACT_APP_PIF_API_URL}/item/`, images).then((res) => {
       setFormData(initialState);
       addItem(res.data);
