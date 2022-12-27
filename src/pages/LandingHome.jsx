@@ -8,7 +8,7 @@ import Carousel  from 'react-bootstrap/Carousel';
 
 const Home = ({ items, updateItemState }) => {
 
-  let token = localStorage.getItem('JWT_Token') 
+  let token = localStorage.getItem('token')
 
  if(token){
   return (
