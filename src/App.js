@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Routes, Route, Redirect } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Home from "./pages/LandingHome.jsx";
 import NewItem from "./pages/NewItem";
 import Layout from "./components/Layout/Layout";
@@ -20,10 +20,15 @@ function App() {
 
 
 
+  // useEffect(() => {
+  //   fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
+  //     .then(res => res.json())
+  //     .then(items => setItems(items));
+  // }, []);
+
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
+    fetch(`${process.env.REACT_APP_PIF_API_URL}/signup/`)
       .then(res => res.json())
-      .then(items => setItems(items));
   }, []);
 
   const handleSignupOrLogin = () => {
@@ -50,7 +55,6 @@ function App() {
     
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
-        <Redirect from='/' to='/signup' />
       <Route path="/signup" element={<SignupTest handleSignupOrLogin={handleSignupOrLogin}/>}/>
       <Route path="/login" element={<LoginTest handleSignupOrLogin={handleSignupOrLogin} setUser={setUser} />} />
        
