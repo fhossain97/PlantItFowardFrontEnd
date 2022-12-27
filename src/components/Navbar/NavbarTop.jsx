@@ -3,17 +3,17 @@ import SearchBar from "../SearchBar/SearchBar";
 import { Link } from "react-router-dom";
 import './Navbar.css'
 
-const NavbarTop = ({ user, handleLogout }) => {
+const NavbarTop = ({user, handleLogout }) => {
   const [items, setItems] = useState([]);
 
-
+  let token = localStorage.getItem('token')
   useEffect(() => {
     fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
       .then((res) => res.json())
       .then((items) => setItems(items));
   }, []);
 
-  let nav = user ? (
+  let nav = token ? (
     <div className="page-wrapper">
       <div className="nav-wrapper">
         <div className="grad-bar"></div>
