@@ -8,14 +8,14 @@ import Carousel  from 'react-bootstrap/Carousel';
 
 const Home = ({ items, updateItemState, user }) => {
 
- if(user){
-  return (
-    <div>
-      <Items items={items} updateItemState={updateItemState} user={user} />
-    </div>
-  )
-}
-  else {
+//  if(user){
+//   return (
+//     <div>
+//       <Items items={items} updateItemState={updateItemState} user={user} />
+//     </div>
+//   )
+// }
+//   else {
     return (
       <Container fluid>
        <Row className='p-4'>
@@ -57,7 +57,7 @@ id='login'
         </Row>
       </Container>
     )
-  }
+  // }
 
   
 

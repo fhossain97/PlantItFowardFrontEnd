@@ -54,7 +54,7 @@ const handleLogout = () => {
     <Layout user={user} setUser={setUser} handleLogout={handleLogout}>
       <Routes>
       <Route
-          path="/home"
+          path="/"
     
           element={
             <Home items={items} updateItemState={updateItemState} user={user} />
