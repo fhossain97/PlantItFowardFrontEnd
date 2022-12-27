@@ -6,16 +6,18 @@ import Row from 'react-bootstrap/Row';
 
 import Carousel  from 'react-bootstrap/Carousel';
 
-const Home = ({ items, updateItemState, user }) => {
+const Home = ({ items, updateItemState }) => {
 
-//  if(user){
-//   return (
-//     <div>
-//       <Items items={items} updateItemState={updateItemState} user={user} />
-//     </div>
-//   )
-// }
-//   else {
+  let token = localStorage.getItem('JWT_Token') 
+
+ if(token){
+  return (
+    <div>
+      <Items items={items} updateItemState={updateItemState} token={token} />
+    </div>
+  )
+}
+  else {
     return (
       <Container fluid>
        <Row className='p-4'>
@@ -57,7 +59,7 @@ id='login'
         </Row>
       </Container>
     )
-  // }
+  }
 
   
 
