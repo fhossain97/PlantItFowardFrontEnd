@@ -18,27 +18,24 @@ function App() {
   const [items, setItems] = useState([]);
   const [user, setUser] = useState({});
 
+  const handleSignupOrLogin = () => {
+    setUser(userService.getUser())
+}
 
-
-  // useEffect(() => {
-  //   fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
-  //     .then(res => res.json())
-  //     .then(items => setItems(items));
-  // }, []);
+const handleLogout = () => {
+    userService.logout();
+    setUser(null)
+}
 
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_PIF_API_URL}/signup/`)
+    fetch(`${process.env.REACT_APP_PIF_API_URL}/item/`)
       .then(res => res.json())
+      .then(items => setItems(items));
   }, []);
 
-  const handleSignupOrLogin = () => {
-      setUser(userService.getUser())
-  }
 
-  const handleLogout = () => {
-      userService.logout();
-      setUser(null)
-  }
+
+
 
   const addItem = (item) => {
     setItems([...items, item]);
