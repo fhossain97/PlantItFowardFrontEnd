@@ -2,68 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-
 body {
-    background-image: linear-gradient(#fdfd96, #01796f);
-    display: wrap;
-
+  background-image: linear-gradient(#fdfd96, #01796f);
+  display: wrap;
 }
 
-#login, #signup {
-    border: none;
+#login,
+#signup {
+  border: none;
 
-margin-right: 10px;
-    width: 25vw;
-   
+  margin-right: 10px;
+  width: 25vw;
 }
 
 #logsigdiv {
-    text-align: center;
+  text-align: center;
 }
 
 #plantCarousel {
-    height: 30vh;
-    width: 25vw;
-    margin: auto;
+  height: 30vh;
+  width: 25vw;
+  margin: auto;
 }
 
 #bottom {
-    padding: 50px
+  padding: 50px;
 }
 
 #logo {
-    height: 50vh;
-    margin: auto
+  height: 50vh;
+  margin: auto;
 }
 
 #vine {
-    margin: auto;
-    height: 14rem
+  margin: auto;
+  height: 14rem;
 }
 
 #cardCont {
-    width: 300px;
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row; 
+  width: 300px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 #cardImg {
-    height: 300px;
-    width: 300px;
+  height: 300px;
+  width: 100%;
 }
 
 #cardBody {
-    height: 5rem;
-    text-align: center;
-    background-color: #74b7a0;
-    color: black;
+  height: 5rem;
+  text-align: center;
+  background-color: #74b7a0;
+  color: black;
 }
 
 #imgDetail {
-    height: 50vh;
-    width: 50vw;
-    margin: auto;
-    border-radius: 25px;
+  height: 50vh;
+  width: 50vw;
+  margin: auto;
+  border-radius: 25px;
 }
-
